@@ -61,18 +61,18 @@
 
   /* ---------- Hero: slideshow synced with the rotating headline ---------- */
   const HERO = [
-    { id: "papier-mache", word: "painting", line: "In Srinagar, they paint flowers onto boxes made of paper.",
-      hiWord: "चित्रकारी", hiLine: "श्रीनगर में कारीगर काग़ज़ से बने डिब्बों पर फूल रंगते हैं।" },
-    { id: "basohli-pashmina", word: "weaving", line: "On a Kashmiri handloom, one pashmina shawl can take weeks.",
-      hiWord: "बुनाई", hiLine: "कश्मीरी हथकरघे पर एक पश्मीना शॉल में हफ़्तों लग जाते हैं।" },
-    { id: "saffron", word: "flowers", line: "In Pampore, families pick saffron before the sun is up.",
-      hiWord: "फूल", hiLine: "पंपोर में परिवार सूरज निकलने से पहले केसर चुनते हैं।" },
-    { id: "sozni", word: "embroidery", line: "A single Sozni shawl can hold months of needlework.",
-      hiWord: "कढ़ाई", hiLine: "एक सोज़नी शॉल में महीनों की सुई-कारी होती है।" },
-    { id: "dogra-dham", word: "cheese", line: "Ramnagar makes kalari — a cheese you fry, not melt.",
-      hiWord: "पनीर", hiLine: "रामनगर की कलाड़ी — ऐसा पनीर जिसे पिघलाते नहीं, तलते हैं।" },
-    { id: "ganga-aarti", word: "ritual", line: "In Haridwar, the river is offered fire every evening.",
-      hiWord: "अनुष्ठान", hiLine: "हरिद्वार में हर शाम गंगा को दीपों की आरती दी जाती है।" }
+    { id: "papier-mache", word: "painting", line: "In Srinagar, they paint flowers onto boxes made of paper",
+      hiWord: "चित्रकारी", hiLine: "श्रीनगर में कारीगर काग़ज़ से बने डिब्बों पर फूल रंगते हैं" },
+    { id: "basohli-pashmina", word: "weaving", line: "On a Kashmiri handloom, one pashmina shawl can take weeks",
+      hiWord: "बुनाई", hiLine: "कश्मीरी हथकरघे पर एक पश्मीना शॉल में हफ़्तों लग जाते हैं" },
+    { id: "saffron", word: "flowers", line: "In Pampore, families pick saffron before the sun is up",
+      hiWord: "फूल", hiLine: "पंपोर में परिवार सूरज निकलने से पहले केसर चुनते हैं" },
+    { id: "sozni", word: "embroidery", line: "A single Sozni shawl can hold months of needlework",
+      hiWord: "कढ़ाई", hiLine: "एक सोज़नी शॉल में महीनों की सुई-कारी होती है" },
+    { id: "dogra-dham", word: "cheese", line: "Ramnagar makes kalari — a cheese you fry, not melt",
+      hiWord: "पनीर", hiLine: "रामनगर की कलाड़ी — ऐसा पनीर जिसे पिघलाते नहीं, तलते हैं" },
+    { id: "ganga-aarti", word: "ritual", line: "In Haridwar, the river is offered fire every evening",
+      hiWord: "अनुष्ठान", hiLine: "हरिद्वार में हर शाम गंगा को दीपों की आरती दी जाती है" }
   ];
   const isHi = () => document.documentElement.lang === "hi";
   function applyHeroLang() {
@@ -115,7 +115,7 @@
   showSlide(0);
 
   // Gentle pointer parallax on the hero photo (desktop / big screens only)
-  if (!reduceMotion && matchMedia("(hover: hover) and (pointer: fine)").matches) {
+  if (false) { // pointer parallax removed in the unslop pass
     let tx = 0, ty = 0, x = 0, y = 0;
     $(".hero").addEventListener("pointermove", e => {
       tx = (e.clientX / innerWidth - .5) * -24; ty = (e.clientY / innerHeight - .5) * -16;
@@ -277,16 +277,12 @@
 
   /* ---------- Marquee ---------- */
   const names = records.map(r => `<span>${esc(r.name)}</span>`).join("");
-  $("#marquee").innerHTML = names + names;
+  const mq = $("#marquee"); if (mq) mq.innerHTML = names + names;
 
   /* ---------- Nav state + statement parallax ---------- */
   const nav = $("#nav"), stBg = $(".statement-bg"), stSec = $(".statement");
   function onScroll() {
     nav.classList.toggle("solid", scrollY > innerHeight * .75);
-    if (!reduceMotion && stBg) {
-      const r = stSec.getBoundingClientRect();
-      if (r.bottom > 0 && r.top < innerHeight) stBg.style.transform = `translate3d(0, ${((r.top + r.height / 2 - innerHeight / 2) * -.12).toFixed(1)}px, 0)`;
-    }
   }
   addEventListener("scroll", onScroll, { passive: true });
   onScroll();
