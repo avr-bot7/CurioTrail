@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,600&family=Inter:wght@400;500;600;700&family=Noto+Serif+Devanagari:wght@400;600&family=Noto+Sans+Devanagari:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="preload" as="image" href="assets/img/papier-mache.webp">
-  <link rel="stylesheet" href="styles.css?v=32">
+  <link rel="stylesheet" href="styles.css?v=40">
 </head>
 <body>
   <header class="nav" id="nav">
@@ -44,7 +44,7 @@
         <p class="hero-body reveal-hero" data-i18n="heroBody">CurioTrail starts from what you already enjoy and leads you to the communities who keep a tradition alive — how the work is done, what it means to the village, and how to learn it from them, on their terms.</p>
         <div class="hero-actions reveal-hero">
           <a class="btn btn-primary" href="#match"><span data-i18n="ctaMatch">Find what fits me</span><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11m-4-4 4 4-4 4"/></svg></a>
-          <a class="btn btn-glass" href="#explore" data-i18n="ctaExplore">See all 47 traditions</a>
+          <a class="btn btn-glass" href="#explore" data-i18n="ctaExplore">See all 158 traditions</a>
         </div>
       </div>
 
@@ -86,8 +86,8 @@
         <blockquote data-reveal>A tradition existing doesn’t mean you’re invited</blockquote>
         <p class="statement-body" data-reveal>A craft is not a sightseeing stop. Nothing beyond reading shows up until the people who practise it say yes, and when they teach, you contact them directly.</p>
         <div class="stats" data-reveal>
-          <div><strong data-count="47" id="statRecords">0</strong><span>traditions documented</span></div>
-          <div><strong data-count="16" id="statJK">0</strong><span>from Jammu &amp; Kashmir</span></div>
+          <div><strong data-count="158" id="statRecords">0</strong><span>traditions documented</span></div>
+          <div><strong data-count="20" id="statJK">0</strong><span>from Jammu &amp; Kashmir</span></div>
           <div><strong data-count="4" id="statTrails">0</strong><span>cultural routes</span></div>
           <div><strong data-count="0" id="statFake">0</strong><span>made-up experiences</span></div>
         </div>
@@ -118,6 +118,7 @@
         </div>
         <p class="count-bar"><strong id="count">0</strong> <span data-i18n="allPractices">traditions</span></p>
         <div class="grid" id="grid"></div>
+        <div class="grid-more" id="gridMore"></div>
       </div>
     </section>
 
@@ -211,10 +212,15 @@
     <div id="bookBody"></div>
   </dialog>
 
-  <script src="data.js?v=32"></script>
-  <script src="paintings.js?v=32"></script>
-  <script src="photos.js?v=32"></script>
-  <script src="app.js?v=32"></script>
-  <script type="module" src="leaves.js?v=32"></script>
+  <script src="data.js?v=40"></script>
+  <script src="data-north.js?v=40"></script>
+  <script src="data-west.js?v=40"></script>
+  <script src="data-east.js?v=40"></script>
+  <script src="data-northeast.js?v=40"></script>
+  <script src="data-south.js?v=40"></script>
+  <script src="paintings.js?v=40"></script>
+  <script src="photos.js?v=40"></script>
+  <script src="app.js?v=40"></script>
+  <script type="module" src="leaves.js?v=40"></script>
 </body>
 </html>

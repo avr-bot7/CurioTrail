@@ -161,5 +161,671 @@ window.CT_PHOTOS = {
   "license": "Reproduced with credit from a published article for an educational project",
   "artist": "E. Sharma (2015)",
   "page": "http://www.jiarm.com"
+ },
+ "kashmir-pashmina": {
+  "title": "Handwoven-kashmir-pashmina",
+  "license": "CC BY-SA 4.0",
+  "artist": "AG",
+  "page": "https://commons.wikimedia.org/wiki/File:Handwoven-kashmir-pashmina.jpg"
+ },
+ "khatamband": {
+  "title": "Mosque doors with the intricate Kashmiri Khatamband pattern, Anantnag",
+  "license": "CC BY-SA 4.0",
+  "artist": "ThePoeticFrame",
+  "page": "https://commons.wikimedia.org/wiki/File:Mosque_doors_with_the_intricate_Kashmiri_Khatamband_pattern,_Anantnag.jpg"
+ },
+ "ladakh-pashmina": {
+  "title": "Changthangi goat",
+  "license": "CC BY-SA 4.0",
+  "artist": "Indusgf",
+  "page": "https://commons.wikimedia.org/wiki/File:Changthangi_goat.jpg"
+ },
+ "ladakh-woodcarving": {
+  "title": "Wooden Gate of Central Asian museum Leh, Ladakh,03",
+  "license": "CC BY-SA 4.0",
+  "artist": "Rajani Gairshail",
+  "page": "https://commons.wikimedia.org/wiki/File:Wooden_Gate_of_Central_Asian_museum_Leh,_Ladakh,03.jpg"
+ },
+ "kangra-painting": {
+  "title": "Radha Krishna, 19th century CE, Kangra School of Art, Museum of Kangra Art, Dharamshala",
+  "license": "CC BY-SA 4.0",
+  "artist": "SpeakingArch",
+  "page": "https://commons.wikimedia.org/wiki/File:Radha_Krishna,_19th_century_CE,_Kangra_School_of_Art,_Museum_of_Kangra_Art,_Dharamshala.jpg"
+ },
+ "kinnauri-shawl": {
+  "title": "Khadi Weaving in Kinnaur, Himachal Pradesh",
+  "license": "CC BY-SA 4.0",
+  "artist": "Sapna Sony",
+  "page": "https://commons.wikimedia.org/wiki/File:Khadi_Weaving_in_Kinnaur,_Himachal_Pradesh.jpg"
+ },
+ "chamba-rumal": {
+  "title": "Chamba Rumal with Scenes of Gopis Adoring Krishna LACMA M.71.1.40",
+  "license": "Public domain",
+  "artist": "Unknown",
+  "page": "https://commons.wikimedia.org/wiki/File:Chamba_Rumal_with_Scenes_of_Gopis_Adoring_Krishna_LACMA_M.71.1.40.jpg"
+ },
+ "himachali-cap": {
+  "title": "Himachali Caps (87069779)",
+  "license": "CC BY 3.0",
+  "artist": "Ravi Kumar",
+  "page": "https://commons.wikimedia.org/wiki/File:Himachali_Caps_(87069779).jpeg"
+ },
+ "mohras": {
+  "title": "Himachali Mohra depicting a goddess; Crafts Museum, Delhi",
+  "license": "CC BY-SA 4.0",
+  "artist": "SpeakingArch",
+  "page": "https://commons.wikimedia.org/wiki/File:Himachali_Mohra_depicting_a_goddess;_Crafts_Museum,_Delhi.jpg"
+ },
+ "bhotia-carpets": {
+  "title": "A Bhotia lady weaving a Dann carpet",
+  "license": "CC0",
+  "artist": "UNDP India",
+  "page": "https://commons.wikimedia.org/wiki/File:A_Bhotia_lady_weaving_a_Dann_carpet.jpg"
+ },
+ "ringaal-craft": {
+  "title": "Women carrying Ringaal Basket in Uttarakhand",
+  "license": "CC0",
+  "artist": "Unknown authorUnknown author",
+  "page": "https://commons.wikimedia.org/wiki/File:Women_carrying_Ringaal_Basket_in_Uttarakhand.jpg"
+ },
+ "chikankari": {
+  "title": "Chikan embroidery, Lucknow",
+  "license": "CC BY 2.0",
+  "artist": "Joey Berzowska",
+  "page": "https://commons.wikimedia.org/wiki/File:Chikan_embroidery,_Lucknow.jpg"
+ },
+ "zardozi": {
+  "title": "Zardozi Art of Farrukhabad",
+  "license": "CC BY-SA 4.0",
+  "artist": "Mohammad Aqib Khan",
+  "page": "https://commons.wikimedia.org/wiki/File:Zardozi_Art_of_Farrukhabad.jpg"
+ },
+ "banarasi-silk": {
+  "title": "Alkama Ansari - A Banarasi Saree Weaver",
+  "license": "CC BY-SA 4.0",
+  "artist": "Alkamagroup",
+  "page": "https://commons.wikimedia.org/wiki/File:Alkama_Ansari_-_A_Banarasi_Saree_Weaver.jpg"
+ },
+ "moradabad-brass": {
+  "title": "Brass Handicrafts of Moradabad",
+  "license": "CC BY-SA 4.0",
+  "artist": "Ashishb04",
+  "page": "https://commons.wikimedia.org/wiki/File:Brass_Handicrafts_of_Moradabad.jpg"
+ },
+ "khurja-pottery": {
+  "title": "Khurja pottery 3",
+  "license": "CC BY-SA 4.0",
+  "artist": "Atcelsius",
+  "page": "https://commons.wikimedia.org/wiki/File:Khurja_pottery_3.jpg"
+ },
+ "agra-inlay": {
+  "title": "Marble Inlay Demonstration - U P Handicrafts Complex - Fatehabad Road - Agra 2014-05-14 4221",
+  "license": "CC BY 3.0",
+  "artist": "Biswarup Ganguly",
+  "page": "https://commons.wikimedia.org/wiki/File:Marble_Inlay_Demonstration_-_U_P_Handicrafts_Complex_-_Fatehabad_Road_-_Agra_2014-05-14_4221.JPG"
+ },
+ "nizamabad-pottery": {
+  "title": "Nizamabad black clay pottery",
+  "license": "CC BY 4.0",
+  "artist": "Aishik Rehman",
+  "page": "https://commons.wikimedia.org/wiki/File:Nizamabad_black_clay_pottery.png"
+ },
+ "delhi-meenakari": {
+  "title": "Bracelet, North India, Mughal period, 18th-19th century, gold, diamonds, rubies, emeralds, enamel - Royal Ontario Museum - DSC04557",
+  "license": "CC0",
+  "artist": "Daderot",
+  "page": "https://commons.wikimedia.org/wiki/File:Bracelet,_North_India,_Mughal_period,_18th-19th_century,_gold,_diamonds,_rubies,_emeralds,_enamel_-_Royal_Ontario_Museum_-_DSC04557.JPG"
+ },
+ "chandigarh-furniture": {
+  "title": "Pierre Jeanneret Chair PJ-SI-28-B",
+  "license": "CC BY 4.0",
+  "artist": "Phadzim",
+  "page": "https://commons.wikimedia.org/wiki/File:Pierre_Jeanneret_Chair_PJ-SI-28-B.jpg"
+ },
+ "kullu-shawl": {
+  "title": "Kullvi Pattu Weaving in Kullu district,1",
+  "license": "CC BY-SA 4.0",
+  "artist": "Rajani Gairshail",
+  "page": "https://commons.wikimedia.org/wiki/File:Kullvi_Pattu_Weaving_in_Kullu_district,1.jpg"
+ },
+ "sanganeri-print": {
+  "title": "Woman doing Block Printing at Bagru village, Jaipur, India",
+  "license": "CC0",
+  "artist": "Anildiggiwal",
+  "page": "https://commons.wikimedia.org/wiki/File:Woman_doing_Block_Printing_at_Bagru_village,_Jaipur,_India.jpg"
+ },
+ "bandhani": {
+  "title": "Bandhani Dupatta (7034542551)",
+  "license": "CC BY 2.0",
+  "artist": "RubyGoes",
+  "page": "https://commons.wikimedia.org/wiki/File:Bandhani_Dupatta_(7034542551).jpg"
+ },
+ "jaipur-blue-pottery": {
+  "title": "Jaipur Blue Pottery Vase with Raja-Rani Design",
+  "license": "CC BY-SA 4.0",
+  "artist": "Neek-Theri",
+  "page": "https://commons.wikimedia.org/wiki/File:Jaipur_Blue_Pottery_Vase_with_Raja-Rani_Design.jpg"
+ },
+ "kathputli": {
+  "title": "Kathputli (Puppet Dance) in Rajasthan",
+  "license": "CC BY-SA 4.0",
+  "artist": "Ktorrespr",
+  "page": "https://commons.wikimedia.org/wiki/File:Kathputli_(Puppet_Dance)_in_Rajasthan.jpg"
+ },
+ "makrana-marble": {
+  "title": "MARBLE MAKRANA",
+  "license": "CC BY-SA 4.0",
+  "artist": "HEAVEN SOCIAL SEVA SOCIETY",
+  "page": "https://commons.wikimedia.org/wiki/File:MARBLE_MAKRANA.jpg"
+ },
+ "rogan-art": {
+  "title": "Rogan painting",
+  "license": "CC BY 2.0",
+  "artist": "Rick Bradley",
+  "page": "https://commons.wikimedia.org/wiki/File:Rogan_painting.jpg"
+ },
+ "patan-patola": {
+  "title": "Antique Patan Patola Double Ikat Trade Textile courtesy Wovensouls Collection, Singapore",
+  "license": "CC BY-SA 4.0",
+  "artist": "Jainamishra",
+  "page": "https://commons.wikimedia.org/wiki/File:Antique_Patan_Patola_Double_Ikat_Trade_Textile_courtesy_Wovensouls_Collection,_Singapore.jpg"
+ },
+ "kutch-embroidery": {
+  "title": "Ahir Embroidery From Kutch",
+  "license": "CC BY-SA 4.0",
+  "artist": "Fewword",
+  "page": "https://commons.wikimedia.org/wiki/File:Ahir_Embroidery_From_Kutch.jpg"
+ },
+ "sankheda-furniture": {
+  "title": "Sankheda sofa chair",
+  "license": "CC BY-SA 4.0",
+  "artist": "Nvvchar",
+  "page": "https://commons.wikimedia.org/wiki/File:Sankheda_sofa_chair.jpg"
+ },
+ "paithani": {
+  "title": "Wedding saree (1050936)",
+  "license": "CC0",
+  "artist": "Only Paithani",
+  "page": "https://commons.wikimedia.org/wiki/File:Wedding_saree_(1050936).jpg"
+ },
+ "himroo": {
+  "title": "Himroo shawl",
+  "license": "CC BY 2.0",
+  "artist": "RubyGoes from Sydney, Australia",
+  "page": "https://commons.wikimedia.org/wiki/File:Himroo_shawl.jpg"
+ },
+ "kolhapuri-chappal": {
+  "title": "Kolhapuri Chappals in roadside shop in Kolhapur1",
+  "license": "CC BY-SA 4.0",
+  "artist": "सुबोध कुलकर्णी",
+  "page": "https://commons.wikimedia.org/wiki/File:Kolhapuri_Chappals_in_roadside_shop_in_Kolhapur1.jpg"
+ },
+ "sawantwadi-toys": {
+  "title": "Colorful wooden toys workshop in Sawantwadi",
+  "license": "CC BY-SA 4.0",
+  "artist": "Art Projects MKCL KF",
+  "page": "https://commons.wikimedia.org/wiki/File:Colorful_wooden_toys_workshop_in_Sawantwadi.jpg"
+ },
+ "kunbi-saree": {
+  "title": "GoaKunbiDance",
+  "license": "CC BY 2.0",
+  "artist": "Eustaquio Santimano",
+  "page": "https://commons.wikimedia.org/wiki/File:GoaKunbiDance.jpg"
+ },
+ "goa-azulejos": {
+  "title": "Azulejos tiles near the altar",
+  "license": "CC BY-SA 4.0",
+  "artist": "Vikas Singh",
+  "page": "https://commons.wikimedia.org/wiki/File:Azulejos_tiles_near_the_altar.jpg"
+ },
+ "chanderi": {
+  "title": "A man weaving the famous handloom Chanderi Saree",
+  "license": "CC BY-SA 4.0",
+  "artist": "Monali0906",
+  "page": "https://commons.wikimedia.org/wiki/File:A_man_weaving_the_famous_handloom_Chanderi_Saree.jpg"
+ },
+ "bagh-print": {
+  "title": "Traditional Bagh hand block print master craftsman-artisan-artist Mohammed Bilal Khatri, Madhya Pradesh, India",
+  "license": "CC BY-SA 4.0",
+  "artist": "Bsfs",
+  "page": "https://commons.wikimedia.org/wiki/File:Traditional_Bagh_hand_block_print_master_craftsman-artisan-artist_Mohammed_Bilal_Khatri,_Madhya_Pradesh,_India.jpg"
+ },
+ "bastar-dhokra": {
+  "title": "AT WORKSHOP",
+  "license": "CC BY-SA 3.0",
+  "artist": "Sushilsakhuja",
+  "page": "https://commons.wikimedia.org/wiki/File:AT_WORKSHOP.jpg"
+ },
+ "kantha": {
+  "title": "Kantha (bed cover), West BengalHonolulu Museum of Art 3928.1",
+  "license": "CC0",
+  "artist": "Hiart",
+  "page": "https://commons.wikimedia.org/wiki/File:Kantha_(bed_cover),_West_BengalHonolulu_Museum_of_Art_3928.1.JPG"
+ },
+ "baluchari": {
+  "title": "Baluchari Saree making",
+  "license": "CC BY-SA 4.0",
+  "artist": "PRITAMDUTTA20",
+  "page": "https://commons.wikimedia.org/wiki/File:Baluchari_Saree_making.jpg"
+ },
+ "shantiniketan-leather": {
+  "title": "Leather bags craft of Shantiniketan, West Bengal",
+  "license": "CC BY-SA 4.0",
+  "artist": "Sneha G Gupta",
+  "page": "https://commons.wikimedia.org/wiki/File:Leather_bags_craft_of_Shantiniketan,_West_Bengal.jpg"
+ },
+ "bankura-horse": {
+  "title": "Bankura Terracotta Horses",
+  "license": "CC BY-SA 4.0",
+  "artist": "Footlooseinme",
+  "page": "https://commons.wikimedia.org/wiki/File:Bankura_Terracotta_Horses.jpg"
+ },
+ "krishnanagar-dolls": {
+  "title": "Krishnanagar Clay Models",
+  "license": "CC BY-SA 4.0",
+  "artist": "Aman6496",
+  "page": "https://commons.wikimedia.org/wiki/File:Krishnanagar_Clay_Models.jpg"
+ },
+ "purulia-chhau-mask": {
+  "title": "Chhau Mask of Charida",
+  "license": "CC BY-SA 4.0",
+  "artist": "বাক্যবাগীশ",
+  "page": "https://commons.wikimedia.org/wiki/File:Chhau_Mask_of_Charida.jpg"
+ },
+ "pipli-applique": {
+  "title": "Pipli 3",
+  "license": "CC BY-SA 4.0",
+  "artist": "Rahul Mukherjee",
+  "page": "https://commons.wikimedia.org/wiki/File:Pipli_3.jpg"
+ },
+ "sambalpuri-ikat": {
+  "title": "Tanta buna Sambalpuri Saree Weaving Sonepur Odisha",
+  "license": "CC BY-SA 3.0",
+  "artist": "Lincon Mishra",
+  "page": "https://commons.wikimedia.org/wiki/File:Tanta_buna_Sambalpuri_Saree_Weaving_Sonepur_Odisha.jpg"
+ },
+ "cuttack-tarakasi": {
+  "title": "Cuttack Tarkasi (silver filigree) pendant & ear rings",
+  "license": "CC BY-SA 3.0",
+  "artist": "ଆଶୁତୋଷ କର",
+  "page": "https://commons.wikimedia.org/wiki/File:Cuttack_Tarkasi_(silver_filigree)_pendant_%26_ear_rings.jpg"
+ },
+ "konark-stone": {
+  "title": "Stone carving at Konark interpretation centre",
+  "license": "CC BY-SA 4.0",
+  "artist": "SRADHA SUMAN RATH",
+  "page": "https://commons.wikimedia.org/wiki/File:Stone_carving_at_Konark_interpretation_centre.jpg"
+ },
+ "tikuli": {
+  "title": "TIkuli Art",
+  "license": "CC BY-SA 4.0",
+  "artist": "Kislaykomal",
+  "page": "https://commons.wikimedia.org/wiki/File:TIkuli_Art.jpg"
+ },
+ "patna-qalam": {
+  "title": "Confectioner's Shop, India, Patna School, 19th century, Honolulu Museum of Art",
+  "license": "Public domain",
+  "artist": "AnonymousUnknown author",
+  "page": "https://commons.wikimedia.org/wiki/File:Confectioner%27s_Shop,_India,_Patna_School,_19th_century,_Honolulu_Museum_of_Art.JPG"
+ },
+ "sikki": {
+  "title": "Sikki Grass Craft by artisan Nazda Khatun of Bihar 14",
+  "license": "CC BY-SA 4.0",
+  "artist": "Goutam1962",
+  "page": "https://commons.wikimedia.org/wiki/File:Sikki_Grass_Craft_by_artisan_Nazda_Khatun_of_Bihar_14.jpg"
+ },
+ "sohrai-khovar": {
+  "title": "A Munda tribesman sitting in front of wall decorated with Munda style Sohrai Painting at Isko Village, Hazaribagh",
+  "license": "CC BY 4.0",
+  "artist": "Kingshuk Mondal",
+  "page": "https://commons.wikimedia.org/wiki/File:A_Munda_tribesman_sitting_in_front_of_wall_decorated_with_Munda_style_Sohrai_Painting_at_Isko_Village,_Hazaribagh.jpg"
+ },
+ "muga-silk": {
+  "title": "Muga Silk Process",
+  "license": "CC BY-SA 4.0",
+  "artist": "Gautam Daniel",
+  "page": "https://commons.wikimedia.org/wiki/File:Muga_Silk_Process.jpg"
+ },
+ "eri-silk": {
+  "title": "Eri silk fiber",
+  "license": "CC BY-SA 4.0",
+  "artist": "Simtastic01",
+  "page": "https://commons.wikimedia.org/wiki/File:Eri_silk_fiber.jpg"
+ },
+ "sualkuchi-weaving": {
+  "title": "Handloom industry of Sualkuchi, Assam",
+  "license": "CC BY-SA 4.0",
+  "artist": "JyotiPN",
+  "page": "https://commons.wikimedia.org/wiki/File:Handloom_industry_of_Sualkuchi,_Assam.jpg"
+ },
+ "jaapi": {
+  "title": "Jaapi of Assam",
+  "license": "CC BY-SA 4.0",
+  "artist": "Ankur Jyoti Dewri",
+  "page": "https://commons.wikimedia.org/wiki/File:Jaapi_of_Assam.jpg"
+ },
+ "majuli-masks": {
+  "title": "The Mask of Majuli - Hanuman-Monkey",
+  "license": "CC BY-SA 4.0",
+  "artist": "Afughat",
+  "page": "https://commons.wikimedia.org/wiki/File:The_Mask_of_Majuli_-_Hanuman-Monkey.jpg"
+ },
+ "sarthebari-metal": {
+  "title": "Bell metal handicraft Sarthebari",
+  "license": "CC BY-SA 4.0",
+  "artist": "Dhruba Jyoti Deka",
+  "page": "https://commons.wikimedia.org/wiki/File:Bell_metal_handicraft_Sarthebari.jpg"
+ },
+ "arunachal-cane": {
+  "title": "\"Nadang\" The Adi Basket",
+  "license": "CC BY-SA 4.0",
+  "artist": "Standupstok",
+  "page": "https://commons.wikimedia.org/wiki/File:%22Nadang%22_The_Adi_Basket.jpg"
+ },
+ "naga-shawl": {
+  "title": "Naga shawl 2",
+  "license": "CC BY-SA 4.0",
+  "artist": "Atcelsius",
+  "page": "https://commons.wikimedia.org/wiki/File:Naga_shawl_2.jpg"
+ },
+ "naga-beadwork": {
+  "title": "These are handmade, traditional Naga tribal beaded necklaces from North East India",
+  "license": "CC BY 4.0",
+  "artist": "পাপৰি বৰা",
+  "page": "https://commons.wikimedia.org/wiki/File:These_are_handmade,_traditional_Naga_tribal_beaded_necklaces_from_North_East_India.jpg"
+ },
+ "naga-pottery": {
+  "title": "The making of traditional pottery by the Phom of Nagaland, Northeast India. Published in EAZ 57, 2023",
+  "license": "CC BY 4.0",
+  "artist": "Ditamulü Vasa",
+  "page": "https://commons.wikimedia.org/wiki/File:The_making_of_traditional_pottery_by_the_Phom_of_Nagaland,_Northeast_India._Published_in_EAZ_57,_2023.jpg"
+ },
+ "longpi-pottery": {
+  "title": "Longpi pottery of Thankul Naga tribes DSCN1244 01",
+  "license": "CC BY-SA 4.0",
+  "artist": "Sumita Roy Dutta",
+  "page": "https://commons.wikimedia.org/wiki/File:Longpi_pottery_of_Thankul_Naga_tribes_DSCN1244_01.jpg"
+ },
+ "ryndia": {
+  "title": "Ryndia",
+  "license": "CC0",
+  "artist": "Wann Majaw",
+  "page": "https://commons.wikimedia.org/wiki/File:Ryndia.jpg"
+ },
+ "khasi-basketry": {
+  "title": "Basket Ginger Flowers Sasatgre West Garo Oct24 A7CR 03711",
+  "license": "CC BY-SA 4.0",
+  "artist": "This Photo was taken by Timothy A. Gonsalves.  Feel free to use my photos, but please ment",
+  "page": "https://commons.wikimedia.org/wiki/File:Basket_Ginger_Flowers_Sasatgre_West_Garo_Oct24_A7CR_03711.jpg"
+ },
+ "risa": {
+  "title": "Common Tripuri Red Risa",
+  "license": "CC BY-SA 4.0",
+  "artist": "Tipraha",
+  "page": "https://commons.wikimedia.org/wiki/File:Common_Tripuri_Red_Risa.jpg"
+ },
+ "tripura-bamboo": {
+  "title": "ত্রিপুরার বাঁশের কারুশিল্প Bamboo Handicraft of Tripura",
+  "license": "CC BY-SA 4.0",
+  "artist": "Sumasa",
+  "page": "https://commons.wikimedia.org/wiki/File:%E0%A6%A4%E0%A7%8D%E0%A6%B0%E0%A6%BF%E0%A6%AA%E0%A7%81%E0%A6%B0%E0%A6%BE%E0%A6%B0_%E0%A6%AC%E0%A6%BE%E0%A6%81%E0%A6%B6%E0%A7%87%E0%A6%B0_%E0%A6%95%E0%A6%BE%E0%A6%B0%E0%A7%81%E0%A6%B6%E0%A6%BF%E0%A6%B2%E0%A7%8D%E0%A6%AA_Bamboo_Handicraft_of_Tripura.jpg"
+ },
+ "lepcha-weaving": {
+  "title": "A women weaving at Lachen",
+  "license": "CC BY-SA 4.0",
+  "artist": "Jirah P Lepcha",
+  "page": "https://commons.wikimedia.org/wiki/File:A_women_weaving_at_Lachen.jpg"
+ },
+ "sikkim-carpets": {
+  "title": "Tibetan Carpet Factory of Ravangla, Sikkim",
+  "license": "CC BY 2.0",
+  "artist": "Sukanto Debnath from Hyderabad, India",
+  "page": "https://commons.wikimedia.org/wiki/File:Tibetan_Carpet_Factory_of_Ravangla,_Sikkim.jpg"
+ },
+ "thanjavur-painting": {
+  "title": "Tanjore Painting Vinyaka",
+  "license": "CC BY-SA 3.0",
+  "artist": "Iramuthusamy",
+  "page": "https://commons.wikimedia.org/wiki/File:Tanjore_Painting_Vinyaka.jpg"
+ },
+ "kanchipuram-silk": {
+  "title": "Complicated hand-loom for silk weaving, Kanchipuram, Tamil Nadu",
+  "license": "CC BY 2.0",
+  "artist": "McKay Savage",
+  "page": "https://commons.wikimedia.org/wiki/File:Complicated_hand-loom_for_silk_weaving,_Kanchipuram,_Tamil_Nadu.jpg"
+ },
+ "toda-embroidery": {
+  "title": "Toda embroidery and poothkuli shawls, National Crafts Museum, New Delhi",
+  "license": "CC BY-SA 4.0",
+  "artist": "Niranjan Ramamurthy",
+  "page": "https://commons.wikimedia.org/wiki/File:Toda_embroidery_and_poothkuli_shawls,_National_Crafts_Museum,_New_Delhi.jpg"
+ },
+ "pattamadai-mats": {
+  "title": "Pathamadai mats in making JEG1741",
+  "license": "CC BY-SA 4.0",
+  "artist": "PJeganathan",
+  "page": "https://commons.wikimedia.org/wiki/File:Pathamadai_mats_in_making_JEG1741.jpg"
+ },
+ "swamimalai-bronze": {
+  "title": "Chola art,bronze nataraja at swamimalai art gallery - panoramio",
+  "license": "CC BY 3.0",
+  "artist": "rajaraman sundaram",
+  "page": "https://commons.wikimedia.org/wiki/File:Chola_art,bronze_nataraja_at_swamimalai_art_gallery_-_panoramio.jpg"
+ },
+ "athangudi-tiles": {
+  "title": "Chettinad Athangudi tile making - vrtmrtn2k26 (1)",
+  "license": "CC BY-SA 4.0",
+  "artist": "Vinayaraj",
+  "page": "https://commons.wikimedia.org/wiki/File:Chettinad_Athangudi_tile_making_-_vrtmrtn2k26_(1).jpg"
+ },
+ "mahabalipuram-stone": {
+  "title": "Men carving stone idols or murti. Mahabalipuram. 2010",
+  "license": "CC BY-SA 4.0",
+  "artist": "John Hill",
+  "page": "https://commons.wikimedia.org/wiki/File:Men_carving_stone_idols_or_murti._Mahabalipuram._2010.jpg"
+ },
+ "alleppey-coir": {
+  "title": "Coir making in Kerala (2167763279)",
+  "license": "CC BY-SA 2.0",
+  "artist": "fraboof",
+  "page": "https://commons.wikimedia.org/wiki/File:Coir_making_in_Kerala_(2167763279).jpg"
+ },
+ "aranmula-kannadi": {
+  "title": "Aranmula Kannadi",
+  "license": "CC BY-SA 4.0",
+  "artist": "Prasanth Prakash",
+  "page": "https://commons.wikimedia.org/wiki/File:Aranmula_Kannadi.jpg"
+ },
+ "nettipattam": {
+  "title": "Elephants - 2008 Kerala festival",
+  "license": "CC BY 2.0",
+  "artist": "spisharam",
+  "page": "https://commons.wikimedia.org/wiki/File:Elephants_-_2008_Kerala_festival.jpg"
+ },
+ "mysore-silk": {
+  "title": "Mysore Silk Saree",
+  "license": "CC BY-SA 3.0",
+  "artist": "Kiranravikumar",
+  "page": "https://commons.wikimedia.org/wiki/File:Mysore_Silk_Saree.jpg"
+ },
+ "kasuti": {
+  "title": "Kasuti of Karnataka",
+  "license": "CC BY-SA 4.0",
+  "artist": "தீப்தி செந்தில்",
+  "page": "https://commons.wikimedia.org/wiki/File:Kasuti_of_Karnataka.jpg"
+ },
+ "ilkal-saree": {
+  "title": "Ilkal saree",
+  "license": "CC0",
+  "artist": "T B Dinesh",
+  "page": "https://commons.wikimedia.org/wiki/File:Ilkal_saree.jpg"
+ },
+ "channapatna-toys": {
+  "title": "Channapatna artist coloring toy",
+  "license": "CC BY-SA 4.0",
+  "artist": "KartikMistry",
+  "page": "https://commons.wikimedia.org/wiki/File:Channapatna_artist_coloring_toy.jpg"
+ },
+ "bidriware": {
+  "title": "Making Bidriware",
+  "license": "CC BY-SA 4.0",
+  "artist": "Footlooseinme",
+  "page": "https://commons.wikimedia.org/wiki/File:Making_Bidriware.jpg"
+ },
+ "mysore-rosewood-inlay": {
+  "title": "Wood inlay Mysore",
+  "license": "CC BY 2.0",
+  "artist": "Brian Snelson",
+  "page": "https://commons.wikimedia.org/wiki/File:Wood_inlay_Mysore.jpg"
+ },
+ "kinhal-craft": {
+  "title": "Kinhal toys, Karnataka",
+  "license": "CC BY-SA 4.0",
+  "artist": "Psubhashish",
+  "page": "https://commons.wikimedia.org/wiki/File:Kinhal_toys,_Karnataka.jpeg"
+ },
+ "kondapalli-toys": {
+  "title": "Kondapalli Toys (3404488827)",
+  "license": "CC BY 2.0",
+  "artist": "Balamurugan Natarajan from chennai, India",
+  "page": "https://commons.wikimedia.org/wiki/File:Kondapalli_Toys_(3404488827).jpg"
+ },
+ "etikoppaka-toys": {
+  "title": "Etikoppaka Toys at an Exhibition in Visakhapatnam",
+  "license": "CC BY-SA 4.0",
+  "artist": "Adityamadhav83",
+  "page": "https://commons.wikimedia.org/wiki/File:Etikoppaka_Toys_at_an_Exhibition_in_Visakhapatnam.JPG"
+ },
+ "bobbili-veena": {
+  "title": "BobbiliVeenaToy1",
+  "license": "CC BY-SA 4.0",
+  "artist": "Rajasekhar1961",
+  "page": "https://commons.wikimedia.org/wiki/File:BobbiliVeenaToy1.jpg"
+ },
+ "tholu-bommalata": {
+  "title": "Tholu Bommalata in Janapada Jathara (2018) 02",
+  "license": "CC BY-SA 4.0",
+  "artist": "Department of Language and Culture, Government of Telangana",
+  "page": "https://commons.wikimedia.org/wiki/File:Tholu_Bommalata_in_Janapada_Jathara_(2018)_02.jpg"
+ },
+ "pochampally-ikat": {
+  "title": "Pochampalli Ikat saree",
+  "license": "CC BY-SA 4.0",
+  "artist": "Ramkumar Kalyani",
+  "page": "https://commons.wikimedia.org/wiki/File:Pochampalli_Ikat_saree.jpg"
+ },
+ "nirmal-toys": {
+  "title": "Nirmal Wood Work (1)",
+  "license": "CC BY-SA 4.0",
+  "artist": "విశ్వనాధ్.బి.కె.",
+  "page": "https://commons.wikimedia.org/wiki/File:Nirmal_Wood_Work_(1).jpg"
+ },
+ "karimnagar-filigree": {
+  "title": "Silver-filigree-of-karimnagar-peacock-h (1)",
+  "license": "CC0",
+  "artist": "Unknown authorUnknown author",
+  "page": "https://commons.wikimedia.org/wiki/File:Silver-filigree-of-karimnagar-peacock-h_(1).jpg"
+ },
+ "villianur-terracotta": {
+  "title": "Munusamy Activity",
+  "license": "CC BY-SA 4.0",
+  "artist": "Milogudz",
+  "page": "https://commons.wikimedia.org/wiki/File:Munusamy_Activity.png"
+ },
+ "aari-embroidery": {
+  "title": "Kashmiri-hand-embroidery-bait-ul-meeras",
+  "license": "CC BY-SA 4.0",
+  "artist": "Zatara-Iqbal",
+  "page": "https://commons.wikimedia.org/wiki/File:Kashmiri-hand-embroidery-bait-ul-meeras.jpg"
+ },
+ "maheshwari": {
+  "title": "Traditional Maheshwari Saree 01",
+  "license": "CC BY-SA 4.0",
+  "artist": "Bhaiyaji Smile 123",
+  "page": "https://commons.wikimedia.org/wiki/File:Traditional_Maheshwari_Saree_01.jpg"
+ },
+ "palm-leaf-engraving": {
+  "title": "Palm-leaf engraving",
+  "license": "Supplied by Team PyTorch",
+  "artist": "Source not recorded",
+  "page": ""
+ },
+ "mizo-puan": {
+  "title": "Mizo girls in Mizo traditional dress",
+  "license": "CC BY-SA 4.0",
+  "artist": "Byronkhiangte",
+  "page": "https://commons.wikimedia.org/wiki/File:Mizo_girls_in_Mizo_traditional_dress.jpg"
+ },
+ "kasavu": {
+  "title": "Kerala women set saree (4993953030)",
+  "license": "CC BY 2.0",
+  "artist": "R.U.P.A.K - A.N.T.O ~~ Passing Time",
+  "page": "https://commons.wikimedia.org/wiki/File:Kerala_women_set_saree_(4993953030).jpg"
+ },
+ "kerala-woodcarving": {
+  "title": "2017-Lichtenstein-Holzskulptur-Indischer-Elefant",
+  "license": "CC BY-SA 4.0",
+  "artist": "Oliver Kloss",
+  "page": "https://commons.wikimedia.org/wiki/File:2017-Lichtenstein-Holzskulptur-Indischer-Elefant.jpg"
+ },
+ "kaavi-art": {
+  "title": "Kaavi art",
+  "license": "Supplied by Team PyTorch",
+  "artist": "Source not recorded",
+  "page": ""
+ },
+ "godna-painting": {
+  "title": "Godna painting",
+  "license": "Supplied by Team PyTorch",
+  "artist": "Source not recorded",
+  "page": ""
+ },
+ "paitkar": {
+  "title": "Paitkar painting",
+  "license": "Supplied by Team PyTorch",
+  "artist": "Source not recorded",
+  "page": ""
+ },
+ "kishtwar-loi": {
+  "title": "Kishtwar Loi",
+  "license": "Supplied by Team PyTorch",
+  "artist": "Source not recorded",
+  "page": ""
+ },
+ "punjabi-durrie": {
+  "title": "Punjabi durrie",
+  "license": "Supplied by Team PyTorch",
+  "artist": "Source not recorded",
+  "page": ""
+ },
+ "panipat-handloom": {
+  "title": "Panipat handloom",
+  "license": "Supplied by Team PyTorch",
+  "artist": "Source not recorded",
+  "page": ""
+ },
+ "bhadohi-carpets": {
+  "title": "Bhadohi carpet",
+  "license": "Supplied by Team PyTorch",
+  "artist": "Source not recorded",
+  "page": ""
+ },
+ "leheriya": {
+  "title": "Leheriya",
+  "license": "Supplied by Team PyTorch",
+  "artist": "Source not recorded",
+  "page": ""
+ },
+ "ajrakh": {
+  "title": "Ajrakh print",
+  "license": "Supplied by Team PyTorch",
+  "artist": "Source not recorded",
+  "page": ""
+ },
+ "tangaliya": {
+  "title": "Tangaliya weave",
+  "license": "Supplied by Team PyTorch",
+  "artist": "Source not recorded",
+  "page": ""
  }
 };

@@ -4,7 +4,7 @@
 window.CT_DATA = {
   tags: {
     painting: { label: "Painting & colour", words: ["paint", "painting", "draw", "drawing", "colour", "color", " art", "चित्र", "पेंट", "sketch", "illustrat", "miniature", "mural"] },
-    handwork: { label: "Detailed handwork", words: ["handwork", "craft", "detail", "make", "making", "handmade", "diy", "inlay", "carv", "हस्त", "शिल्प"] },
+    handwork: { label: "Handicrafts", words: ["handwork", "handicraft", "craft", "pottery", "jewel", "basket", "toy", "mask", "detail", "make", "making", "handmade", "diy", "inlay", "carv", "हस्त", "शिल्प"] },
     textile: { label: "Textiles & weaving", words: ["weav", "textile", "fabric", "shawl", "wool", "embroider", "stitch", "sew", "knit", "fashion", "thread", "बुन", "कढ़ाई", "कपड़"] },
     wood: { label: "Woodwork", words: ["wood", "carpentry", "furniture", "carv", "walnut", "लकड़ी"] },
     metal: { label: "Metalwork", words: ["metal", "brass", "copper", "utensil", "smith", "hammer", "तांबा", "पीतल", "धातु"] },
@@ -18,7 +18,7 @@ window.CT_DATA = {
   records: [
     {
       id: "basohli-painting", name: "Basohli Miniature Painting", nameHi: "बसोहली लघु चित्रकला",
-      state: "Jammu & Kashmir", district: "Kathua", place: "Basohli", category: "Visual art",
+      state: "Jammu & Kashmir", district: "Kathua", place: "Basohli", category: "Painting",
       tags: ["painting", "handwork", "history"],
       hook: "One of the earliest schools of Pahari painting, known for bold primary colours, flat backgrounds and expressive faces.",
       does: "Painters prepare handmade paper, grind mineral and vegetable pigments, sketch a fine outline and build the image in layers before burnishing.",
@@ -31,7 +31,7 @@ window.CT_DATA = {
     },
     {
       id: "basohli-pashmina", name: "Basohli Pashmina", nameHi: "बसोहली पश्मीना",
-      state: "Jammu & Kashmir", district: "Kathua", place: "Basohli", category: "Textile",
+      state: "Jammu & Kashmir", district: "Kathua", place: "Basohli", category: "Weaving & textiles",
       tags: ["textile", "handwork"],
       hook: "Feather-light hand-spun pashmina woven in Basohli, prized for its softness and fine count.",
       does: "Artisans hand-spin fine fibre into yarn on a charkha and weave it on handlooms into shawls and stoles.",
@@ -44,7 +44,7 @@ window.CT_DATA = {
     },
     {
       id: "papier-mache", name: "Kashmiri Papier-mâché", nameHi: "कश्मीरी पेपर-माशी",
-      state: "Jammu & Kashmir", district: "Srinagar", place: "Srinagar", category: "Craft",
+      state: "Jammu & Kashmir", district: "Srinagar", place: "Srinagar", category: "Handicrafts",
       tags: ["painting", "handwork", "history"],
       hook: "Paper pulp moulded into boxes, vases and ornaments, then hand-painted with intricate floral motifs.",
       does: "One artisan makes the form (sakhtsazi) from paper pulp; another paints it (naqashi) in fine floral and bird patterns.",
@@ -57,7 +57,7 @@ window.CT_DATA = {
     },
     {
       id: "sozni", name: "Sozni Embroidery", nameHi: "सोज़नी कढ़ाई",
-      state: "Jammu & Kashmir", district: "Srinagar", place: "Srinagar", category: "Textile",
+      state: "Jammu & Kashmir", district: "Srinagar", place: "Srinagar", category: "Weaving & textiles",
       tags: ["textile", "handwork"],
       hook: "Needle embroidery so fine that a single shawl can take months, worked on pashmina and wool.",
       does: "A design is block-printed onto the fabric, then embroiderers fill it with tiny satin and stem stitches.",
@@ -70,7 +70,7 @@ window.CT_DATA = {
     },
     {
       id: "kani", name: "Kani Shawl Weaving", nameHi: "कानी शॉल बुनाई",
-      state: "Jammu & Kashmir", district: "Budgam", place: "Kanihama", category: "Textile",
+      state: "Jammu & Kashmir", district: "Budgam", place: "Kanihama", category: "Weaving & textiles",
       tags: ["textile", "handwork", "history"],
       hook: "Patterns woven — not embroidered — using small wooden bobbins (kanis) following a coded script.",
       does: "Weavers follow a coded pattern (talim) read aloud or written, passing dozens of coloured kanis by hand through the warp.",
@@ -83,7 +83,7 @@ window.CT_DATA = {
     },
     {
       id: "walnut-carving", name: "Walnut Wood Carving", nameHi: "अखरोट लकड़ी नक्काशी",
-      state: "Jammu & Kashmir", district: "Srinagar", place: "Srinagar", category: "Craft",
+      state: "Jammu & Kashmir", district: "Srinagar", place: "Srinagar", category: "Handicrafts",
       tags: ["wood", "handwork"],
       hook: "Deep relief carving in Kashmir walnut — vines, chinar leaves and lattice work.",
       does: "Carvers season walnut wood and cut motifs at several depths, from shallow to deeply undercut.",
@@ -96,7 +96,7 @@ window.CT_DATA = {
     },
     {
       id: "namda", name: "Namda Felt Rugs", nameHi: "नमदा",
-      state: "Jammu & Kashmir", district: "Srinagar", place: "Srinagar", category: "Textile",
+      state: "Jammu & Kashmir", district: "Srinagar", place: "Srinagar", category: "Weaving & textiles",
       tags: ["textile", "handwork"],
       hook: "Rugs made by felting wool — no weaving at all — then embroidered with bright chain stitch.",
       does: "Wool is laid out, wetted with soap water and pressed by hand and foot until it felts, then embroidered.",
@@ -109,7 +109,7 @@ window.CT_DATA = {
     },
     {
       id: "wazwan", name: "Wazwan", nameHi: "वाज़वान",
-      state: "Jammu & Kashmir", district: "Srinagar", place: "Kashmir Valley", category: "Food",
+      state: "Jammu & Kashmir", district: "Srinagar", place: "Kashmir Valley", category: "Cooking & food",
       tags: ["food", "history"],
       hook: "A multi-course Kashmiri feast cooked by master chefs (wazas) — rista, rogan josh, gushtaba.",
       does: "Wazas cook over wood fires through the night; dishes are served on a shared copper plate (trami).",
@@ -122,7 +122,7 @@ window.CT_DATA = {
     },
     {
       id: "dogra-dham", name: "Dogra Dham & Kalari", nameHi: "डोगरा धाम और कलाड़ी",
-      state: "Jammu & Kashmir", district: "Udhampur", place: "Udhampur & Jammu", category: "Food",
+      state: "Jammu & Kashmir", district: "Udhampur", place: "Udhampur & Jammu", category: "Cooking & food",
       tags: ["food", "history"],
       hook: "Dogra community feast of rajmash, ambal and khatta, plus kalari — a pan-fried local cheese.",
       does: "Cooks (siyans) prepare dham in large brass vessels; it is served on leaf plates to guests seated on the floor.",
@@ -135,7 +135,7 @@ window.CT_DATA = {
     },
     {
       id: "saffron", name: "Kashmiri Saffron Harvest", nameHi: "कश्मीरी केसर",
-      state: "Jammu & Kashmir", district: "Pulwama", place: "Pampore", category: "Farming",
+      state: "Jammu & Kashmir", district: "Pulwama", place: "Pampore", category: "Farming & nature",
       tags: ["farming", "food"],
       hook: "Crocus fields turn purple in late autumn; stigmas are hand-picked and dried the same day.",
       does: "Families pick flowers at dawn, separate the red stigmas by hand and dry them.",
@@ -148,7 +148,7 @@ window.CT_DATA = {
     },
     {
       id: "kud", name: "Kud Folk Dance", nameHi: "कुड नृत्य",
-      state: "Jammu & Kashmir", district: "Udhampur", place: "Ramnagar & the Jammu hills", category: "Performance",
+      state: "Jammu & Kashmir", district: "Udhampur", place: "Ramnagar & the Jammu hills", category: "Music & dance",
       tags: ["music", "spiritual", "history"],
       hook: "A night-long dance of thanks to the Lok Devtas, the village gods of the Jammu hills, where the music decides every step.",
       does: "After dark, villagers of every age gather in front of the deity's shrine and dance in a circle. The narsingha horn, chhaina cymbals, flute and drums set the beat, and the dancers follow it: slow and swaying at first, then faster as the rhythm climbs through the night.",
@@ -161,7 +161,7 @@ window.CT_DATA = {
     },
     {
       id: "chhakri", name: "Chhakri Folk Music", nameHi: "छकरी लोक संगीत",
-      state: "Jammu & Kashmir", district: "Srinagar", place: "Kashmir Valley", category: "Performance",
+      state: "Jammu & Kashmir", district: "Srinagar", place: "Kashmir Valley", category: "Music & dance",
       tags: ["music", "history"],
       hook: "Kashmir's popular group folk song — sung with nout, rabab, sarangi and tumbaknari.",
       does: "Singers and instrumentalists perform narrative songs, often love stories and Sufi verse, at gatherings.",
@@ -174,7 +174,7 @@ window.CT_DATA = {
     },
     {
       id: "thathera", name: "Thathera Brass & Copper Craft", nameHi: "ठठेरा पीतल-तांबा शिल्प",
-      state: "Punjab", district: "Amritsar", place: "Jandiala Guru", category: "Craft",
+      state: "Punjab", district: "Amritsar", place: "Jandiala Guru", category: "Handicrafts",
       tags: ["metal", "handwork", "history"],
       hook: "Utensils hand-beaten from brass and copper sheets — inscribed on UNESCO's Intangible Heritage list.",
       does: "Thatheras heat metal sheets and beat them into shape on anvils, then polish and finish them.",
@@ -187,7 +187,7 @@ window.CT_DATA = {
     },
     {
       id: "hoshiarpur-inlay", name: "Hoshiarpur Wood Inlay", nameHi: "होशियारपुर लकड़ी जड़ाई",
-      state: "Punjab", district: "Hoshiarpur", place: "Hoshiarpur", category: "Craft",
+      state: "Punjab", district: "Hoshiarpur", place: "Hoshiarpur", category: "Handicrafts",
       tags: ["wood", "handwork"],
       hook: "Fine patterns of contrasting material set into sheesham wood furniture and boxes.",
       does: "Artisans carve shallow channels into wood and set in thin pieces of contrasting material, then sand and polish.",
@@ -200,7 +200,7 @@ window.CT_DATA = {
     },
     {
       id: "almora-tamta", name: "Almora Copperware (Tamta)", nameHi: "अल्मोड़ा तांबा शिल्प",
-      state: "Uttarakhand", district: "Almora", place: "Almora", category: "Craft",
+      state: "Uttarakhand", district: "Almora", place: "Almora", category: "Handicrafts",
       tags: ["metal", "handwork", "history"],
       hook: "Hand-hammered copper vessels made by the Tamta community in Almora's old bazaar.",
       does: "Craftspeople hammer copper into water pots (gagar), plates and ritual vessels.",
@@ -213,7 +213,7 @@ window.CT_DATA = {
     },
     {
       id: "kumaoni-food", name: "Kumaoni Food & Bal Mithai", nameHi: "कुमाऊँनी भोजन और बाल मिठाई",
-      state: "Uttarakhand", district: "Almora", place: "Almora", category: "Food",
+      state: "Uttarakhand", district: "Almora", place: "Almora", category: "Cooking & food",
       tags: ["food"],
       hook: "Hill food — bhatt ki churkani, aloo ke gutke — and Almora's famous bal mithai.",
       does: "Cooks roast khoya into a fudge, coat it in sugar balls, and prepare slow-cooked hill lentils.",
@@ -226,7 +226,7 @@ window.CT_DATA = {
     },
     {
       id: "ganga-aarti", name: "Ganga Aarti at Har Ki Pauri", nameHi: "हर की पौड़ी गंगा आरती",
-      state: "Uttarakhand", district: "Haridwar", place: "Haridwar", category: "Ritual",
+      state: "Uttarakhand", district: "Haridwar", place: "Haridwar", category: "Spiritual",
       tags: ["spiritual", "music", "history"],
       hook: "An evening river ritual of lamps, bells and chanting on the Ganga ghats.",
       does: "Priests offer large brass lamps to the river at dusk while crowds float leaf-boat diyas.",
@@ -240,7 +240,7 @@ window.CT_DATA = {
     },
     {
       id: "rishikesh-yoga", name: "Yoga & Meditation, Rishikesh", nameHi: "ऋषिकेश योग और ध्यान",
-      state: "Uttarakhand", district: "Dehradun", place: "Rishikesh", category: "Ritual",
+      state: "Uttarakhand", district: "Dehradun", place: "Rishikesh", category: "Spiritual",
       tags: ["spiritual", "history"],
       hook: "Ashram traditions of yoga, meditation and study along the Ganga.",
       does: "Ashrams teach asana, pranayama and meditation, often alongside scripture study and seva.",
@@ -253,7 +253,7 @@ window.CT_DATA = {
     },
     {
       id: "phulkari", name: "Phulkari", nameHi: "फुलकारी",
-      state: "Punjab", district: "Patiala", place: "Patiala", category: "Textile",
+      state: "Punjab", district: "Patiala", place: "Patiala", category: "Weaving & textiles",
       tags: ["textile", "handwork", "history"],
       hook: "Flower-work in silk floss, darned from the back of the cloth until the whole surface glows.",
       does: "Embroiderers count threads on hand-spun khaddar and darn untwisted silk (pat) in long and short stitches, building geometric flowers without drawing them first.",
@@ -266,7 +266,7 @@ window.CT_DATA = {
     },
     {
       id: "kashmir-carpet", name: "Kashmir Hand-knotted Carpet", nameHi: "कश्मीरी हाथ से बुना कालीन",
-      state: "Jammu & Kashmir", district: "Srinagar", place: "Srinagar", category: "Textile",
+      state: "Jammu & Kashmir", district: "Srinagar", place: "Srinagar", category: "Weaving & textiles",
       tags: ["textile", "handwork", "history"],
       hook: "Hundreds of knots to the square inch, tied one at a time while a weaver reads the design aloud in a coded script.",
       does: "Weavers tie each knot of wool or silk around the warp, following the talim, a written colour code that is chanted as the work goes on.",
@@ -279,7 +279,7 @@ window.CT_DATA = {
     },
     {
       id: "punjabi-jutti", name: "Punjabi Jutti", nameHi: "पंजाबी जूती",
-      state: "Punjab", district: "Patiala", place: "Patiala", category: "Craft",
+      state: "Punjab", district: "Patiala", place: "Patiala", category: "Handicrafts",
       tags: ["handwork", "textile"],
       hook: "Flat leather shoes with curled toes, stitched by hand and covered in gold and silver thread.",
       does: "Cobblers cut and hand-stitch tanned leather, and embroiderers cover the upper with tilla and dabka thread work.",
@@ -292,7 +292,7 @@ window.CT_DATA = {
     },
     {
       id: "kashmiri-bread", name: "Kandur Breads of Kashmir", nameHi: "कश्मीरी कांदुर रोटियाँ",
-      state: "Jammu & Kashmir", district: "Srinagar", place: "Srinagar", category: "Food",
+      state: "Jammu & Kashmir", district: "Srinagar", place: "Srinagar", category: "Cooking & food",
       tags: ["food", "history"],
       hook: "Before sunrise, every neighbourhood baker slaps dough onto the walls of a clay oven sunk into the floor.",
       does: "The kandur bakes girda, lavasa, tsochvoru and bakarkhani in a deep clay oven, and families buy them warm for morning tea.",
@@ -305,7 +305,7 @@ window.CT_DATA = {
     },
     {
       id: "noon-chai", name: "Noon Chai", nameHi: "नून चाय",
-      state: "Jammu & Kashmir", district: "Srinagar", place: "Kashmir Valley", category: "Food",
+      state: "Jammu & Kashmir", district: "Srinagar", place: "Kashmir Valley", category: "Cooking & food",
       tags: ["food"],
       hook: "A salty, rose-pink tea brewed for a long time and poured from a samovar.",
       does: "Green tea leaves are boiled with a pinch of soda until the brew turns deep red, then milk and salt are added and it is aerated until pink.",
@@ -318,7 +318,7 @@ window.CT_DATA = {
     },
     {
       id: "rouf", name: "Rouf", nameHi: "रउफ़ नृत्य",
-      state: "Jammu & Kashmir", district: "Srinagar", place: "Kashmir Valley", category: "Performance",
+      state: "Jammu & Kashmir", district: "Srinagar", place: "Kashmir Valley", category: "Music & dance",
       tags: ["music"],
       hook: "Two rows of women, arms linked, stepping forward and back as they sing to each other.",
       does: "Women face each other in lines and move with small, rocking steps while one row sings a verse and the other answers.",
@@ -331,7 +331,7 @@ window.CT_DATA = {
     },
     {
       id: "bhangra", name: "Bhangra", nameHi: "भांगड़ा",
-      state: "Punjab", district: "Across Punjab", place: "Rural Punjab", category: "Performance",
+      state: "Punjab", district: "Across Punjab", place: "Rural Punjab", category: "Music & dance",
       tags: ["music"],
       hook: "The harvest dance of Punjab, driven by the dhol and danced with shoulders, arms and leaps.",
       does: "Dancers move in a circle to the dhol, raising their arms and calling out boliyan, short sung couplets.",
@@ -344,7 +344,7 @@ window.CT_DATA = {
     },
     {
       id: "sanjhi", name: "Sanjhi", nameHi: "सांझी",
-      state: "Punjab & Haryana", district: "Across both states", place: "Village courtyards", category: "Visual art",
+      state: "Punjab & Haryana", district: "Across both states", place: "Village courtyards", category: "Painting",
       tags: ["painting", "handwork", "spiritual"],
       hook: "During Navratri, girls in Punjab and Haryana build Sanjhi Mata on the village wall from hundreds of tiny clay stars.",
       does: "Girls mould little clay stars, discs and triangles and let them dry. Then they press them onto fresh mud and dung on an outer wall, using dung as glue, until the goddess stands with both arms raised, covered in clay jewellery, with a small figure of her brother beside her.",
@@ -357,7 +357,7 @@ window.CT_DATA = {
     },
     {
       id: "aipan", name: "Aipan", nameHi: "ऐपण",
-      state: "Uttarakhand", district: "Almora", place: "Kumaon", category: "Visual art",
+      state: "Uttarakhand", district: "Almora", place: "Kumaon", category: "Painting",
       tags: ["painting", "spiritual", "history"],
       hook: "Doorsteps and prayer rooms painted in rice paste over red earth, drawn freehand with three fingers.",
       does: "Women coat the floor or wall with geru (red ochre). Once it is ready, they draw geometric and sacred patterns freehand in rice paste using the last three fingers of the right hand. The same art decorates mango-wood seats (chowkis), wall panels, paper and cloth.",

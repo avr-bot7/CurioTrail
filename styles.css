@@ -164,6 +164,11 @@ p { text-wrap: pretty; }
 .count-bar { margin: 28px 0 20px; font-size: 15px; color: var(--ink-2); }
 .count-bar strong { font: 600 22px var(--serif); color: var(--ink); }
 .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr)); gap: clamp(18px, 1.8vw, 28px); }
+.grid-more { display: flex; flex-direction: column; align-items: center; gap: 14px; margin-top: clamp(28px, 3vw, 44px); }
+.grid-more:empty { display: none; }
+.grid-more-count { margin: 0; font-size: 15px; color: var(--ink-2); font-variant-numeric: tabular-nums; }
+.grid-more .btn { min-width: 200px; background: var(--surface); }
+@media (hover: hover) and (pointer: fine) { .grid-more .btn:hover { border-color: var(--ink-3); } .grid-more .btn:hover svg { translate: 0 2px; } }
 .card { display: flex; flex-direction: column; padding: 0; text-align: left; color: inherit; background: var(--surface); border: 1px solid transparent; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); cursor: pointer; -webkit-tap-highlight-color: transparent;
   transition-property: translate, box-shadow, scale; transition-duration: 260ms; transition-timing-function: var(--ease-out); }
 .card:active { scale: .98; }

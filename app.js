@@ -1,17 +1,22 @@
 (function () {
   "use strict";
   const { tags, trails } = window.CT_DATA;
-  // Folk painting traditions (paintings.js) join the main list as ordinary Visual art cards.
+  // Folk painting traditions (paintings.js) join the main list as ordinary Painting cards.
   const PT = window.CT_PAINTINGS || { items: [], sources: {} };
   const records = [...window.CT_DATA.records, ...PT.items.map(p => ({
     id: p.id, name: p.name, nameHi: p.nameHi, state: p.state, district: p.district, place: p.place,
-    category: "Visual art", tags: p.tags, hook: p.hook, story: p.story, technique: p.technique,
+    category: "Painting", tags: p.tags, hook: p.hook, story: p.story, technique: p.technique,
     materials: p.colours, occasion: p.occasion, community: p.community, hue: p.hue,
     img: `assets/img/fp-${p.id}.webp`, fig: p.fig,
     engagement: { visit: false, observe: false, participate: false },
     sources: [PT.sources[p.src]].filter(Boolean), reviewed: "Nov 2026"
   }))];
   const byId = Object.fromEntries(records.map(r => [r.id, r]));
+  // Counts on the home page follow the data, so new records show up in them automatically.
+  const jkCount = records.filter(r => r.state === "Jammu & Kashmir").length;
+  document.querySelector("#statRecords")?.setAttribute("data-count", records.length);
+  document.querySelector("#statJK")?.setAttribute("data-count", jkCount);
+  document.querySelectorAll('[data-i18n="ctaExplore"]').forEach(el => { el.textContent = el.textContent.replace(/\d+/, records.length); });
   // The site has three pages (home, workshops, marketplace) sharing this script. When a page
   // lacks an element, $ hands back a detached stand-in so that page's code runs harmlessly.
   const $ = s => document.querySelector(s) || Object.assign(document.createElement("div"), { value: "", checked: false });
@@ -54,13 +59,13 @@
   }
 
   const ICONS = {
-    "Visual art": '<path d="M18 3l3 3-9.5 9.5-3-3z"/><path d="M8.5 12.5c-2 0-3.5 1.5-3.5 3.5 0 1.5-1 2.5-2 3 3 1 7 0 7-3"/>',
-    "Textile": '<rect x="6" y="3" width="12" height="4" rx="1"/><rect x="6" y="17" width="12" height="4" rx="1"/><path d="M8 7v10M16 7v10M8 9.5l8 2M8 13.5l8 2"/>',
-    "Craft": '<path d="M9 3h6M10 3v3c-3 1.5-5 4-5 7.5C5 18 8 21 12 21s7-3 7-7.5c0-3.5-2-6-5-7.5V3"/><path d="M6.5 11.5h11"/>',
-    "Food": '<path d="M3 12h18a9 9 0 0 1-18 0z"/><path d="M9 3c-1 1.5 1 2.5 0 4.5M13 3c-1 1.5 1 2.5 0 4.5"/>',
-    "Farming": '<path d="M12 21v-8"/><path d="M12 13c-3 0-5-3-5-7 2.5 0 4 1.5 5 3 1-1.5 2.5-3 5-3 0 4-2 7-5 7z"/><path d="M12 18c-2-2-4-2-6-1M12 18c2-2 4-2 6-1"/>',
-    "Performance": '<path d="M9 18V5l11-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="17" cy="16" r="3"/>',
-    "Ritual": '<path d="M3 13c0 4 4 6 9 6s9-2 9-6z"/><path d="M12 3c-2 2.5-2 5 0 7 2-2 2-4.5 0-7z"/>'
+    "Painting": '<path d="M18 3l3 3-9.5 9.5-3-3z"/><path d="M8.5 12.5c-2 0-3.5 1.5-3.5 3.5 0 1.5-1 2.5-2 3 3 1 7 0 7-3"/>',
+    "Weaving & textiles": '<rect x="6" y="3" width="12" height="4" rx="1"/><rect x="6" y="17" width="12" height="4" rx="1"/><path d="M8 7v10M16 7v10M8 9.5l8 2M8 13.5l8 2"/>',
+    "Handicrafts": '<path d="M9 3h6M10 3v3c-3 1.5-5 4-5 7.5C5 18 8 21 12 21s7-3 7-7.5c0-3.5-2-6-5-7.5V3"/><path d="M6.5 11.5h11"/>',
+    "Cooking & food": '<path d="M3 12h18a9 9 0 0 1-18 0z"/><path d="M9 3c-1 1.5 1 2.5 0 4.5M13 3c-1 1.5 1 2.5 0 4.5"/>',
+    "Farming & nature": '<path d="M12 21v-8"/><path d="M12 13c-3 0-5-3-5-7 2.5 0 4 1.5 5 3 1-1.5 2.5-3 5-3 0 4-2 7-5 7z"/><path d="M12 18c-2-2-4-2-6-1M12 18c2-2 4-2 6-1"/>',
+    "Music & dance": '<path d="M9 18V5l11-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="17" cy="16" r="3"/>',
+    "Spiritual": '<path d="M3 13c0 4 4 6 9 6s9-2 9-6z"/><path d="M12 3c-2 2.5-2 5 0 7 2-2 2-4.5 0-7z"/>'
   };
   const PHOTOS = window.CT_PHOTOS || {};
   function artHtml(r) {
@@ -71,7 +76,7 @@
     }
     return `<div class="art" style="--h:${r.hue}" aria-hidden="true">
       <span class="state-tag">${esc(r.state === "Jammu & Kashmir" ? "J&K" : r.state)}</span>
-      <span class="arch"><svg viewBox="0 0 24 24">${ICONS[r.category] || ICONS.Craft}</svg></span></div>`;
+      <span class="arch"><svg viewBox="0 0 24 24">${ICONS[r.category] || ICONS.Handicrafts}</svg></span></div>`;
   }
 
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -142,7 +147,7 @@
   }
 
   /* ---------- Decorative trail art: a route through each section's empty bands, travelled by a vehicle ---------- */
-  const TA_ICONS = { brush: ICONS["Visual art"], spool: ICONS.Textile, vase: ICONS.Craft, bowl: ICONS.Food, crocus: ICONS.Farming, music: ICONS.Performance, diya: ICONS.Ritual };
+  const TA_ICONS = { brush: ICONS.Painting, spool: ICONS["Weaving & textiles"], vase: ICONS.Handicrafts, bowl: ICONS["Cooking & food"], crocus: ICONS["Farming & nature"], music: ICONS["Music & dance"], diya: ICONS.Spiritual };
   const TA_KEYS = Object.keys(TA_ICONS);
   const PLACES = ["Basohli", "Srinagar", "Pampore", "Kanihama", "Ramnagar", "Udhampur", "Patnitop", "Bhaderwah", "Kishtwar", "Anantnag",
     "Kathua", "Jammu", "Sopore", "Budgam", "Amritsar", "Jandiala Guru", "Hoshiarpur", "Almora", "Haridwar", "Rishikesh"];
@@ -165,7 +170,7 @@
 
     // Content boxes (with breathing room) that nothing may touch.
     const sr = sec.getBoundingClientRect();
-    const boxes = [...sec.querySelectorAll(".head, .match-box, .chips, .match-card, .empty, .filters, .count-bar, .card, .trail, .rules, .pract-card, .pract-grid > div, .ws-card, .mk-cats, .mk-card")]
+    const boxes = [...sec.querySelectorAll(".head, .match-box, .chips, .match-card, .empty, .filters, .count-bar, .card, .grid-more, .trail, .rules, .pract-card, .pract-grid > div, .ws-card, .mk-cats, .mk-card")]
       .map(e => { const r = e.getBoundingClientRect(); return [r.left - sr.left - 32, r.top - sr.top - 32, r.right - sr.left + 32, r.bottom - sr.top + 32]; })
       .filter(b => b[2] - b[0] > 60);
     const hits = (list, cx, cy, w, h) => list.some(([a, b, c, e]) => cx + w / 2 > a && cx - w / 2 < c && cy + h / 2 > b && cy - h / 2 < e);
@@ -336,8 +341,8 @@
   }, { threshold: .4 }).observe(statsEl);
 
   /* ---------- Explore filters ---------- */
-  // Cards read in this order: visual art, textiles, crafts, food, then everything else.
-  const CAT_ORDER = ["Visual art", "Textile", "Craft", "Food", "Farming", "Performance", "Ritual"];
+  // The eight CurioTrail categories, in the order filters and cards use.
+  const CAT_ORDER = ["Painting", "Cooking & food", "Weaving & textiles", "Music & dance", "Handicrafts", "Spiritual", "Farming & nature", "History"];
   const catRank = r => { const i = CAT_ORDER.indexOf(r.category); return i < 0 ? CAT_ORDER.length : i; };
   const fState = $("#fState"), fDistrict = $("#fDistrict"), fCategory = $("#fCategory"), fEngage = $("#fEngage"), fSearch = $("#fSearch");
   const uniq = arr => [...new Set(arr)].sort();
@@ -351,17 +356,10 @@
   }
   fillDistricts();
 
-  function renderGrid() {
-    const q = fSearch.value.trim().toLowerCase();
-    const list = records.filter(r =>
-      (!fState.value || r.state === fState.value) &&
-      (!fDistrict.value || r.district === fDistrict.value) &&
-      (!fCategory.value || r.category === fCategory.value) &&
-      (!fEngage.value || eng(r)[fEngage.value]) &&
-      (!q || [r.name, r.place, r.district, r.state, r.category, r.hook].join(" ").toLowerCase().includes(q)))
-      .sort((a, b) => catRank(a) - catRank(b));
-    $("#count").textContent = list.length;
-    $("#grid").innerHTML = list.length ? list.map((r, i) => `
+  // The grid opens with one page of cards; "Read more" adds the next page under them.
+  const PAGE = () => (innerWidth < 700 ? 6 : 12);
+  let gridList = [], gridShown = 0;
+  const cardHtml = (r, i) => `
       <button class="card" style="--i:${i}" data-open="${r.id}" aria-label="Open ${esc(r.name)}">
         ${artHtml(r)}
         <div class="card-body">
@@ -371,18 +369,57 @@
           <p class="card-hook">${esc(r.hook)}</p>
           <div class="levels">${levelsHtml(r)}</div>
         </div>
-      </button>`).join("")
-      : `<p class="empty">Nothing matches those filters. Try loosening one.</p>`;
+      </button>`;
+  function renderMore() {
+    const more = $("#gridMore"), total = gridList.length, left = total - gridShown;
+    if (total <= PAGE()) { more.innerHTML = ""; return; }
+    more.innerHTML = `
+      <p class="grid-more-count">Showing ${gridShown} of ${total} traditions</p>
+      ${left > 0
+        ? `<button type="button" class="btn btn-quiet" data-grid="more">Read more<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>`
+        : `<button type="button" class="btn btn-quiet" data-grid="less">Show less<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 15l6-6 6 6"/></svg></button>`}`;
   }
+  function renderGrid() {
+    const q = fSearch.value.trim().toLowerCase();
+    gridList = records.filter(r =>
+      (!fState.value || r.state === fState.value) &&
+      (!fDistrict.value || r.district === fDistrict.value) &&
+      (!fCategory.value || r.category === fCategory.value) &&
+      (!fEngage.value || eng(r)[fEngage.value]) &&
+      (!q || [r.name, r.place, r.district, r.state, r.category, r.hook].join(" ").toLowerCase().includes(q)))
+      .sort((a, b) => catRank(a) - catRank(b));
+    gridShown = Math.min(gridList.length, PAGE());
+    $("#count").textContent = gridList.length;
+    $("#grid").innerHTML = gridList.length ? gridList.slice(0, gridShown).map(cardHtml).join("")
+      : `<p class="empty">Nothing matches those filters. Try loosening one.</p>`;
+    renderMore();
+  }
+  $("#gridMore").addEventListener("click", e => {
+    const b = e.target.closest("[data-grid]"); if (!b) return;
+    if (b.dataset.grid === "more") {
+      const next = gridList.slice(gridShown, gridShown + PAGE());
+      $("#grid").insertAdjacentHTML("beforeend", next.map((r, i) => cardHtml(r, i)).join(""));
+      const first = $("#grid").children[gridShown];
+      gridShown += next.length;
+      renderMore();
+      first?.focus({ preventScroll: true });
+    } else {
+      renderGrid();
+      $("#explore").scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "start" });
+    }
+  });
   fState.addEventListener("change", () => { fillDistricts(); renderGrid(); });
   [fDistrict, fCategory, fEngage].forEach(el => el.addEventListener("change", renderGrid));
   fSearch.addEventListener("input", renderGrid);
   renderGrid();
 
   /* ---------- Curiosity Match ---------- */
-  const CHIPS = ["Painting", "Cooking & food", "Weaving & textiles", "Music & dance", "Woodwork", "Metalwork", "Spiritual", "Farming & nature", "History"];
+  const CHIPS = ["Painting", "Cooking & food", "Weaving & textiles", "Music & dance", "Handicrafts", "Spiritual", "Farming & nature", "History"];
   $("#matchChips").innerHTML = CHIPS.map(c => `<button type="button" class="chip" aria-pressed="false">${c}</button>`).join("");
 
+  // Interest tag -> main category. Woodwork and metalwork are secondary tags inside Handicrafts.
+  const TAG_CAT = { painting: "Painting", food: "Cooking & food", textile: "Weaving & textiles", music: "Music & dance",
+    handwork: "Handicrafts", wood: "Handicrafts", metal: "Handicrafts", spiritual: "Spiritual", farming: "Farming & nature", history: "History" };
   function detectTags(text) {
     const t = " " + text.toLowerCase();
     return Object.keys(tags).filter(k => tags[k].words.some(w => t.includes(w)));
@@ -392,9 +429,11 @@
     const out = $("#matchResults");
     if (!text.trim()) { out.innerHTML = ""; return; }
     const found = detectTags(text);
+    const wantCats = new Set(found.map(t => TAG_CAT[t]));
     let scored = records.map(r => {
       let s = 0; const hit = [];
       r.tags.forEach((t, i) => { if (found.includes(t)) { s += i === 0 ? 1.5 : 1; hit.push(t); } });
+      if (s && wantCats.has(r.category)) s += 1.5; // a record whose main category was asked for ranks first
       return { r, s, hit };
     }).filter(x => x.s > 0);
 
@@ -477,15 +516,15 @@
   // There is no payment gateway behind "Pay": it confirms the booking on screen and stores nothing.
   const rupees = n => "₹" + n.toLocaleString("en-IN");
   const wsById = Object.fromEntries(WORKSHOPS.map(w => [w.id, w]));
-  const MK_CATS = ["Visual art", "Textile", "Craft", "Food"];
+  const MK_CATS = ["Painting", "Cooking & food", "Weaving & textiles", "Handicrafts"];
   let mkCat = "";
   function renderMarket() {
     const grid = $("#mkGrid"); if (!has("#mkGrid")) return;
     const list = WORKSHOPS.filter(w => byId[w.record] && (!mkCat || byId[w.record].category === mkCat))
       .sort((a, b) => catRank(byId[a.record]) - catRank(byId[b.record]));
-    $("#mkCats").innerHTML = [["", "All sessions"], ...MK_CATS.map(c => [c, c === "Textile" ? "Textiles" : c === "Craft" ? "Crafts" : c])]
+    $("#mkCats").innerHTML = [["", "All sessions"], ...MK_CATS.map(c => [c, c])]
       .filter(([c]) => !c || WORKSHOPS.some(w => byId[w.record]?.category === c))
-      .map(([c, label]) => `<button type="button" class="mk-cat" data-mkcat="${c}" aria-pressed="${mkCat === c}">${esc(label)}</button>`).join("");
+      .map(([c, label]) => `<button type="button" class="mk-cat" data-mkcat="${esc(c)}" aria-pressed="${mkCat === c}">${esc(label)}</button>`).join("");
     grid.innerHTML = list.map((w, i) => {
       const r = byId[w.record];
       return `<article class="mk-card" style="--i:${i}">
@@ -732,7 +771,7 @@
     eyebrow: "डिजिटल विरासत · जम्मू-कश्मीर · पंजाब · उत्तराखंड",
     h1a: "अपनी जिज्ञासा का पीछा करें।", h1b: "जीवंत संस्कृति खोजें।",
     lede: "बताइए आपको क्या पसंद है — चित्रकारी, खाना बनाना, संगीत, हस्तकला। CurioTrail उसे असली सांस्कृतिक परंपराओं से जोड़ता है, उनके पीछे के लोग और प्रक्रिया दिखाता है, और ईमानदारी से बताता है कि आप कैसे जुड़ सकते हैं।",
-    nowShowing: "अभी दिख रहा है", heroBody: "CurioTrail आपकी पसंद से शुरू करता है और आपको उन लोगों तक ले जाता है जो पीढ़ियों से यह काम कर रहे हैं — काम कैसे होता है, कहाँ होता है, और क्या आप सच में देखने आ सकते हैं।", ctaMatch: "मेरे लिए खोजें", ctaExplore: "सभी 47 परंपराएँ देखें", navMatch: "मिलान", navExplore: "परंपराएँ", navTrails: "यात्राएँ", navPract: "कारीगरों के लिए",
+    nowShowing: "अभी दिख रहा है", heroBody: "CurioTrail आपकी पसंद से शुरू करता है और आपको उन लोगों तक ले जाता है जो पीढ़ियों से यह काम कर रहे हैं — काम कैसे होता है, कहाँ होता है, और क्या आप सच में देखने आ सकते हैं।", ctaMatch: "मेरे लिए खोजें", ctaExplore: `सभी ${records.length} परंपराएँ देखें`, navMatch: "मिलान", navExplore: "परंपराएँ", navTrails: "यात्राएँ", navPract: "कारीगरों के लिए",
     statRecords: "परंपरा रिकॉर्ड", statJK: "जम्मू-कश्मीर से", statPlaces: "स्थान", statTrails: "विरासत यात्राएँ",
     matchTitle: "बताइए, आपको क्या पसंद है।", matchSub: "जैसे किसी दोस्त से कहते हैं, वैसे ही लिखिए।", matchBtn: "खोजें",
     exploreTitle: "परंपराएँ खोजें", exploreSub: "क्षेत्र चुनें, फिर किसी भी रिकॉर्ड को खोलकर परंपरा के पीछे की कहानी देखें।",
