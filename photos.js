@@ -107,5 +107,59 @@ window.CT_PHOTOS = {
   "license": "CC BY-SA 3.0",
   "artist": "आशीष भटनागर",
   "page": "https://commons.wikimedia.org/wiki/File:Ganga_ghats,_Laxman_jhula,_Rishikesh.jpg"
+ },
+ "phulkari": {
+  "title": "Contemporary Phulkari design",
+  "license": "CC BY-SA 4.0",
+  "artist": "Sheebamadanloewinger",
+  "page": "https://commons.wikimedia.org/wiki/File:Contemporary_Phulkari_design.jpg"
+ },
+ "kashmir-carpet": {
+  "title": "Kashmiri silk carpet knotting, Bait-ul-Meeras",
+  "license": "CC BY-SA 4.0",
+  "artist": "Zatara-Iqbal",
+  "page": "https://commons.wikimedia.org/wiki/File:Kashmiri-silk-carpet-knotting-bait-ul-meeras.jpg"
+ },
+ "punjabi-jutti": {
+  "title": "Golden Punjabi Jutti Footwear",
+  "license": "CC BY 4.0",
+  "artist": "Changku88",
+  "page": "https://commons.wikimedia.org/wiki/File:Golden_Punjabi_Jutti_Footwear.jpg"
+ },
+ "kashmiri-bread": {
+  "title": "Traditional Kashmiri Baker's Oven",
+  "license": "CC BY-SA 4.0",
+  "artist": "TheAutumnal",
+  "page": "https://commons.wikimedia.org/wiki/File:Traditional_Kashmiri_Baker%27s_Oven.jpg"
+ },
+ "noon-chai": {
+  "title": "Noon Chai",
+  "license": "CC BY-SA 4.0",
+  "artist": "Naryiitmandi",
+  "page": "https://commons.wikimedia.org/wiki/File:Noon_Chai.jpg"
+ },
+ "rouf": {
+  "title": "Rouf Dance",
+  "license": "CC BY 2.0",
+  "artist": "Ramesh Lalwani",
+  "page": "https://commons.wikimedia.org/wiki/File:Rouf_Dance.jpg"
+ },
+ "bhangra": {
+  "title": "Performing regional Bhangra dance of Panjab",
+  "license": "CC BY-SA 4.0",
+  "artist": "Monisankar54",
+  "page": "https://commons.wikimedia.org/wiki/File:Performing_regional_Bhangra_dance_of_Panjab.jpg"
+ },
+ "sanjhi": {
+  "title": "Sanjhi, clay relief on a village wall (Living Traditions, fig. 11.1)",
+  "license": "© CCRT, Ministry of Culture. Reproduced with credit for an educational project",
+  "artist": "North Zone Cultural Centre, Patiala, via CCRT",
+  "page": "https://archive.org/details/livingtraditions00unse"
+ },
+ "aipan": {
+  "title": "Aipan of Uttarakhand (Tribal Folk Arts of India, JIARM 3(5), 2015)",
+  "license": "Reproduced with credit from a published article for an educational project",
+  "artist": "E. Sharma (2015)",
+  "page": "http://www.jiarm.com"
  }
 };

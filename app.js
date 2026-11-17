@@ -1,8 +1,21 @@
 (function () {
   "use strict";
-  const { records, tags, trails } = window.CT_DATA;
+  const { tags, trails } = window.CT_DATA;
+  // Folk painting traditions (paintings.js) join the main list as ordinary Visual art cards.
+  const PT = window.CT_PAINTINGS || { items: [], sources: {} };
+  const records = [...window.CT_DATA.records, ...PT.items.map(p => ({
+    id: p.id, name: p.name, nameHi: p.nameHi, state: p.state, district: p.district, place: p.place,
+    category: "Visual art", tags: p.tags, hook: p.hook, story: p.story, technique: p.technique,
+    materials: p.colours, occasion: p.occasion, community: p.community, hue: p.hue,
+    img: `assets/img/fp-${p.id}.webp`, fig: p.fig,
+    engagement: { visit: false, observe: false, participate: false },
+    sources: [PT.sources[p.src]].filter(Boolean), reviewed: "Nov 2026"
+  }))];
   const byId = Object.fromEntries(records.map(r => [r.id, r]));
-  const $ = s => document.querySelector(s);
+  // The site has three pages (home, workshops, marketplace) sharing this script. When a page
+  // lacks an element, $ hands back a detached stand-in so that page's code runs harmlessly.
+  const $ = s => document.querySelector(s) || Object.assign(document.createElement("div"), { value: "", checked: false });
+  const has = s => !!document.querySelector(s);
   const esc = s => String(s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 
   /* ---------- Practitioner overrides (demo, per browser) ---------- */
@@ -11,13 +24,17 @@
   try { overrides = JSON.parse(localStorage.getItem(KEY) || "{}") || {}; } catch (e) { overrides = {}; }
   const saveOverrides = () => { try { localStorage.setItem(KEY, JSON.stringify(overrides)); } catch (e) { /* storage blocked */ } };
 
+  const WORKSHOPS = window.CT_DATA.workshops || [];
+  const MGMD = window.CT_DATA.mgmd || {}, MGMD_FOR = window.CT_DATA.mgmdFor || {};
+  const wsFor = id => WORKSHOPS.filter(w => w.record === id);
+
   function eng(r) {
-    const o = overrides[r.id] || {};
+    const o = overrides[r.id] || {}, teaches = wsFor(r.id).length > 0;
     return {
       learn: true,
       visit: !!r.engagement.visit,
-      observe: o.observe ?? r.engagement.observe,
-      participate: o.participate ?? r.engagement.participate,
+      observe: o.observe ?? (r.engagement.observe || teaches),
+      participate: o.participate ?? (r.engagement.participate || teaches),
       contact: !!o.contact,
       note: o.note || r.note || "",
       confirmedByPractitioner: !!overrides[r.id]
@@ -25,10 +42,10 @@
   }
 
   const LEVELS = [
-    ["learn", "lv-learn", "Read"],
+    ["learn", "lv-learn", "Learn"],
     ["visit", "lv-visit", "Visit"],
     ["observe", "lv-observe", "Watch"],
-    ["participate", "lv-part", "Try"]
+    ["participate", "lv-part", "Workshop"]
   ];
   function levelsHtml(r) {
     const e = eng(r);
@@ -47,9 +64,9 @@
   };
   const PHOTOS = window.CT_PHOTOS || {};
   function artHtml(r) {
-    if (PHOTOS[r.id]) {
+    if (r.img || PHOTOS[r.id]) {
       return `<div class="art has-photo" style="--h:${r.hue}" aria-hidden="true">
-        <img src="assets/img/${r.id}.webp" alt="" decoding="async">
+        <img src="${r.img || `assets/img/${r.id}.webp`}" alt="" loading="lazy" decoding="async">
         <span class="state-tag">${esc(r.state === "Jammu & Kashmir" ? "J&K" : r.state)}</span></div>`;
     }
     return `<div class="art" style="--h:${r.hue}" aria-hidden="true">
@@ -82,7 +99,7 @@
     $("#swapWord").textContent = isHi() ? h.hiWord : h.word;
     $("#swapLine").textContent = isHi() ? h.hiLine : h.line;
   }
-  const DUR = 6500;
+  const DUR = 4000;
   const media = $("#heroMedia"), prog = $("#heroProgress");
   media.innerHTML = HERO.map((h, i) => `<div class="slide${i === 0 ? " is-active" : ""}"><img src="assets/img/${h.id}.webp" alt="" ${i ? 'loading="lazy"' : 'fetchpriority="high"'} decoding="async"></div>`).join("");
   prog.innerHTML = HERO.map((h, i) => `<button type="button" role="tab" aria-label="Show ${esc(byId[h.id].name)}" style="--dur:${DUR}ms"></button>`).join("");
@@ -96,6 +113,7 @@
     setTimeout(() => { el.textContent = text; el.classList.remove("out"); }, 230);
   }
   function showSlide(n) {
+    if (!has("#heroMedia")) return;
     cur = (n + HERO.length) % HERO.length;
     const h = HERO[cur], r = byId[h.id];
     slides.forEach((s, i) => s.classList.toggle("is-active", i === cur));
@@ -134,7 +152,7 @@
     bus: '<rect class="v-fill" x="1.5" y="6" width="20" height="10.5" rx="2.5"/><path class="v-cut" d="M4 8.5h3.2v3H4zM8.6 8.5h3.2v3H8.6zM13.2 8.5h3.2v3h-3.2zM17.8 8.5h2.2v4.5h-2.2z"/><circle class="v-fill" cx="6" cy="17.5" r="2"/><circle class="v-fill" cx="16.5" cy="17.5" r="2"/>',
     shikara: '<path class="v-fill" d="M1 13.5h22c-1.6 3.4-5.4 5-11 5s-9.4-1.6-11-5z"/><path class="v-line" d="M5 13.5V8.2h12.5v5.3M4 8.2 11.2 5l7.3 3.2M2.5 13.2 0.5 10.5"/>'
   };
-  const SECTION_VEHICLE = { match: "plane", explore: "bus", trails: "shikara", practitioners: "plane" };
+  const SECTION_VEHICLE = { match: "plane", explore: "bus", workshops: "shikara", marketplace: "plane", trails: "bus", practitioners: "plane" };
   const seeded = s => () => (s = (s * 16807) % 2147483647) / 2147483647;
   const trailRuns = new Map();
 
@@ -147,7 +165,7 @@
 
     // Content boxes (with breathing room) that nothing may touch.
     const sr = sec.getBoundingClientRect();
-    const boxes = [...sec.querySelectorAll(".head, .match-box, .chips, .match-card, .empty, .filters, .count-bar, .card, .trail, .rules, .pract-card, .pract-grid > div")]
+    const boxes = [...sec.querySelectorAll(".head, .match-box, .chips, .match-card, .empty, .filters, .count-bar, .card, .trail, .rules, .pract-card, .pract-grid > div, .ws-card, .mk-cats, .mk-card")]
       .map(e => { const r = e.getBoundingClientRect(); return [r.left - sr.left - 32, r.top - sr.top - 32, r.right - sr.left + 32, r.bottom - sr.top + 32]; })
       .filter(b => b[2] - b[0] > 60);
     const hits = (list, cx, cy, w, h) => list.some(([a, b, c, e]) => cx + w / 2 > a && cx - w / 2 < c && cy + h / 2 > b && cy - h / 2 < e);
@@ -282,7 +300,7 @@
   /* ---------- Nav state + statement parallax ---------- */
   const nav = $("#nav"), stBg = $(".statement-bg"), stSec = $(".statement");
   function onScroll() {
-    nav.classList.toggle("solid", scrollY > innerHeight * .75);
+    nav.classList.toggle("solid", document.body.classList.contains("subpage") || scrollY > innerHeight * .75);
   }
   addEventListener("scroll", onScroll, { passive: true });
   onScroll();
@@ -318,12 +336,15 @@
   }, { threshold: .4 }).observe(statsEl);
 
   /* ---------- Explore filters ---------- */
+  // Cards read in this order: visual art, textiles, crafts, food, then everything else.
+  const CAT_ORDER = ["Visual art", "Textile", "Craft", "Food", "Farming", "Performance", "Ritual"];
+  const catRank = r => { const i = CAT_ORDER.indexOf(r.category); return i < 0 ? CAT_ORDER.length : i; };
   const fState = $("#fState"), fDistrict = $("#fDistrict"), fCategory = $("#fCategory"), fEngage = $("#fEngage"), fSearch = $("#fSearch");
   const uniq = arr => [...new Set(arr)].sort();
   const opts = (list, allLabel) => `<option value="">${allLabel}</option>` + list.map(v => `<option>${esc(v)}</option>`).join("");
 
   fState.innerHTML = opts(uniq(records.map(r => r.state)), "All states");
-  fCategory.innerHTML = opts(uniq(records.map(r => r.category)), "All categories");
+  fCategory.innerHTML = opts([...new Set(records.map(r => r.category))].sort((a, b) => catRank({ category: a }) - catRank({ category: b })), "All categories");
   function fillDistricts() {
     const list = records.filter(r => !fState.value || r.state === fState.value).map(r => r.district);
     fDistrict.innerHTML = opts(uniq(list), "All districts");
@@ -337,7 +358,8 @@
       (!fDistrict.value || r.district === fDistrict.value) &&
       (!fCategory.value || r.category === fCategory.value) &&
       (!fEngage.value || eng(r)[fEngage.value]) &&
-      (!q || [r.name, r.place, r.district, r.state, r.category, r.hook].join(" ").toLowerCase().includes(q)));
+      (!q || [r.name, r.place, r.district, r.state, r.category, r.hook].join(" ").toLowerCase().includes(q)))
+      .sort((a, b) => catRank(a) - catRank(b));
     $("#count").textContent = list.length;
     $("#grid").innerHTML = list.length ? list.map((r, i) => `
       <button class="card" style="--i:${i}" data-open="${r.id}" aria-label="Open ${esc(r.name)}">
@@ -426,6 +448,182 @@
         `<li><button data-open="${r.id}">${esc(r.name)}</button><small>${esc(r.place)}</small></li>`).join("")}</ol>
     </article>`).join("");
 
+  /* ---------- Workshops taught by practitioners ---------- */
+  const wsList = $("#workshopList");
+  if (has("#workshopList")) wsList.innerHTML = WORKSHOPS.map(w => {
+    const r = byId[w.record]; if (!r) return "";
+    return `<article class="ws-card">
+      <button class="ws-art" data-open="${r.id}" aria-label="Open ${esc(r.name)}">${artHtml(r)}</button>
+      <div class="ws-body">
+        <span class="card-cat">${esc(r.name)}</span>
+        <h3>${esc(w.title)}</h3>
+        <p class="ws-host">${esc(w.host)}</p>
+        <dl class="ws-facts">
+          <div><dt>Where</dt><dd>${esc(w.place)}</dd></div>
+          <div><dt>When</dt><dd>${esc(w.when)}</dd></div>
+          <div><dt>Length</dt><dd>${esc(w.length)}</dd></div>
+          <div><dt>Group</dt><dd>${esc(w.size)}</dd></div>
+          <div><dt>Taught in</dt><dd>${esc(w.language)}</dd></div>
+        </dl>
+        <div class="ws-foot">
+          <p class="ws-phone"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg><span>${esc(w.phone)}</span></p>
+          <button class="btn btn-primary btn-sm" type="button" data-book="${w.id}">Book a slot</button>
+        </div>
+      </div>
+    </article>`;
+  }).join("");
+
+  /* ---------- Marketplace: book a seat, pick a day and time, pay ---------- */
+  // There is no payment gateway behind "Pay": it confirms the booking on screen and stores nothing.
+  const rupees = n => "₹" + n.toLocaleString("en-IN");
+  const wsById = Object.fromEntries(WORKSHOPS.map(w => [w.id, w]));
+  const MK_CATS = ["Visual art", "Textile", "Craft", "Food"];
+  let mkCat = "";
+  function renderMarket() {
+    const grid = $("#mkGrid"); if (!has("#mkGrid")) return;
+    const list = WORKSHOPS.filter(w => byId[w.record] && (!mkCat || byId[w.record].category === mkCat))
+      .sort((a, b) => catRank(byId[a.record]) - catRank(byId[b.record]));
+    $("#mkCats").innerHTML = [["", "All sessions"], ...MK_CATS.map(c => [c, c === "Textile" ? "Textiles" : c === "Craft" ? "Crafts" : c])]
+      .filter(([c]) => !c || WORKSHOPS.some(w => byId[w.record]?.category === c))
+      .map(([c, label]) => `<button type="button" class="mk-cat" data-mkcat="${c}" aria-pressed="${mkCat === c}">${esc(label)}</button>`).join("");
+    grid.innerHTML = list.map((w, i) => {
+      const r = byId[w.record];
+      return `<article class="mk-card" style="--i:${i}">
+        <button class="mk-art" type="button" data-open="${r.id}" aria-label="About ${esc(r.name)}">${artHtml(r)}</button>
+        <div class="mk-body">
+          <span class="card-cat">${esc(r.category)} · ${esc(w.place)}</span>
+          <h3>${esc(w.title)}</h3>
+          <p class="mk-host">with ${esc(w.host)}</p>
+          <p class="mk-meta"><span>${esc(w.length)}</span><span>${esc(w.size)}</span><span>${esc(w.language)}</span></p>
+          <div class="mk-foot">
+            <p class="mk-price"><strong>${rupees(w.price)}</strong><span>per person</span></p>
+            <button class="btn btn-primary" type="button" data-book="${w.id}">Book a slot</button>
+          </div>
+        </div>
+      </article>`;
+    }).join("");
+  }
+  $("#mkCats")?.addEventListener("click", e => {
+    const b = e.target.closest("[data-mkcat]"); if (!b) return;
+    mkCat = b.dataset.mkcat; renderMarket();
+  });
+  renderMarket();
+
+  const book = $("#bookModal");
+  const DAY = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  const MON = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+  const fmtTime = t => { const [h, m] = t.split(":").map(Number); return `${((h + 11) % 12) + 1}:${String(m).padStart(2, "0")} ${h < 12 ? "AM" : "PM"}`; };
+  const fmtDate = d => `${DAY[d.getDay()]}, ${d.getDate()} ${MON[d.getMonth()]}`;
+  let bk = null;
+
+  function openBooking(id) {
+    const w = wsById[id]; if (!w || !book) return;
+    const today = new Date(); today.setHours(0, 0, 0, 0);
+    const dates = [];
+    for (let i = 1; dates.length < 10 && i < 60; i++) {
+      const d = new Date(today); d.setDate(today.getDate() + i);
+      if (w.days.includes(d.getDay())) dates.push(d);
+    }
+    bk = { w, dates, date: null, time: w.slots.length === 1 ? w.slots[0] : null, people: 1, method: "upi", paid: false };
+    renderBooking();
+    if (typeof book.showModal === "function") book.showModal(); else book.setAttribute("open", "");
+  }
+
+  function renderBooking() {
+    const { w } = bk, r = byId[w.record];
+    const total = w.price * bk.people;
+    if (bk.paid) {
+      $("#bookBody").innerHTML = `
+        <button class="modal-close" aria-label="Close" data-bkclose>&times;</button>
+        <div class="bk-done">
+          <svg class="bk-check" viewBox="0 0 52 52" aria-hidden="true"><circle cx="26" cy="26" r="24"/><path d="M15 27l7 7 15-16"/></svg>
+          <h2 id="bkTitle">Payment successful</h2>
+          <p class="bk-lead">Your seat is booked. ${esc(w.host)} will see you there.</p>
+          <dl class="bk-receipt">
+            <div><dt>Booking</dt><dd>${esc(bk.ref)}</dd></div>
+            <div><dt>Session</dt><dd>${esc(w.title)}</dd></div>
+            <div><dt>When</dt><dd>${fmtDate(bk.date)} · ${fmtTime(bk.time)}</dd></div>
+            <div><dt>Where</dt><dd>${esc(w.place)}</dd></div>
+            <div><dt>Seats</dt><dd>${bk.people}</dd></div>
+            <div><dt>Paid</dt><dd>${rupees(total)}</dd></div>
+          </dl>
+          <p class="bk-note">Questions before the day? Call ${esc(w.phone)}.</p>
+          <button class="btn btn-primary" type="button" data-bkclose>Done</button>
+        </div>`;
+      return;
+    }
+    const ready = bk.date && bk.time && bk.name;
+    $("#bookBody").innerHTML = `
+      <button class="modal-close" aria-label="Close" data-bkclose>&times;</button>
+      <div class="bk-grid">
+        <aside class="bk-side">
+          ${artHtml(r)}
+          <div class="bk-side-body">
+            <span class="card-cat">${esc(r.name)}</span>
+            <h2 id="bkTitle">${esc(w.title)}</h2>
+            <p class="mk-host">with ${esc(w.host)}</p>
+            <p class="mk-meta"><span>${esc(w.place)}</span><span>${esc(w.length)}</span><span>${esc(w.language)}</span></p>
+          </div>
+        </aside>
+        <div class="bk-main">
+          <h3>Pick a day</h3>
+          <div class="bk-chips">${bk.dates.map((d, i) =>
+            `<button type="button" class="bk-chip bk-date" data-bkdate="${i}" aria-pressed="${bk.date && +bk.date === +d}"><small>${DAY[d.getDay()]}</small><strong>${d.getDate()}</strong><small>${MON[d.getMonth()]}</small></button>`).join("")}</div>
+          <h3>Pick a time</h3>
+          <div class="bk-chips">${w.slots.map(t =>
+            `<button type="button" class="bk-chip" data-bktime="${t}" aria-pressed="${bk.time === t}">${fmtTime(t)}</button>`).join("")}</div>
+          <div class="bk-row">
+            <label class="bk-field"><span>Your name</span><input id="bkName" type="text" autocomplete="name" value="${esc(bk.name || "")}" placeholder="Full name"></label>
+            <div class="bk-field"><span>Seats</span>
+              <div class="bk-stepper">
+                <button type="button" data-bkpeople="-1" aria-label="One fewer seat" ${bk.people <= 1 ? "disabled" : ""}>−</button>
+                <output>${bk.people}</output>
+                <button type="button" data-bkpeople="1" aria-label="One more seat" ${bk.people >= w.max ? "disabled" : ""}>+</button>
+              </div>
+            </div>
+          </div>
+          <h3>Pay with</h3>
+          <div class="bk-chips bk-methods">${[["upi", "UPI"], ["card", "Card"], ["netbanking", "Net banking"]].map(([k, l]) =>
+            `<button type="button" class="bk-chip" data-bkmethod="${k}" aria-pressed="${bk.method === k}">${l}</button>`).join("")}</div>
+          <div class="bk-total">
+            <div><span>${rupees(w.price)} × ${bk.people} seat${bk.people > 1 ? "s" : ""}</span><strong>${rupees(total)}</strong></div>
+            <button class="btn btn-primary bk-pay" type="button" data-bkpay ${ready ? "" : "disabled"}>Pay ${rupees(total)}</button>
+          </div>
+          <p class="bk-hint">${ready ? `${fmtDate(bk.date)} at ${fmtTime(bk.time)}` : !bk.date ? "Choose a day to continue" : !bk.time ? "Choose a time to continue" : "Add your name to continue"}</p>
+        </div>
+      </div>`;
+  }
+
+  document.addEventListener("click", e => {
+    const b = e.target.closest("[data-book]");
+    if (b) { if (modal?.open) modal.close(); openBooking(b.dataset.book); }
+  });
+  book?.addEventListener("click", e => {
+    if (e.target === book || e.target.closest("[data-bkclose]")) { book.close(); return; }
+    const t = e.target.closest("button"); if (!t || !bk) return;
+    if (t.dataset.bkdate) bk.date = bk.dates[+t.dataset.bkdate];
+    else if (t.dataset.bktime) bk.time = t.dataset.bktime;
+    else if (t.dataset.bkpeople) bk.people = Math.min(bk.w.max, Math.max(1, bk.people + +t.dataset.bkpeople));
+    else if (t.dataset.bkmethod) bk.method = t.dataset.bkmethod;
+    else if (t.hasAttribute("data-bkpay")) {
+      t.disabled = true; t.classList.add("is-busy"); t.textContent = "Processing…";
+      setTimeout(() => {
+        bk.paid = true;
+        bk.ref = "CT-" + Date.now().toString(36).slice(-6).toUpperCase();
+        renderBooking();
+      }, 1400);
+      return;
+    } else return;
+    renderBooking();
+  });
+  book?.addEventListener("input", e => {
+    if (e.target.id !== "bkName" || !bk) return;
+    bk.name = e.target.value.trim();
+    const pay = book.querySelector("[data-bkpay]"), ready = bk.date && bk.time && bk.name;
+    pay.disabled = !ready;
+    book.querySelector(".bk-hint").textContent = ready ? `${fmtDate(bk.date)} at ${fmtTime(bk.time)}` : "Add your name to continue";
+  });
+
   /* ---------- Behind the Practice modal ---------- */
   const modal = $("#recordModal");
   function openRecord(id) {
@@ -435,34 +633,57 @@
       `<div class="engage-row"><span>${label}</span><span class="st ${ok ? "st-yes" : "st-no"}">${ok ? yes : no}</span></div>`;
     $("#modalBody").innerHTML = `
       <button class="modal-close" aria-label="Close" data-close>&times;</button>
-      ${artHtml(r)}
+      ${r.img ? `<figure class="pt-hero"><img src="${r.img}" alt="${esc(r.name)} painting"></figure>` : artHtml(r)}
       <div class="m-head">
         <span class="card-cat">${esc(r.category)} · Behind the Practice</span>
         <h2 id="mTitle">${esc(r.name)}</h2>
         <span class="hi" lang="hi">${esc(r.nameHi)}</span>
-        <p class="card-place">${esc(r.place)}, ${esc(r.district)} district, ${esc(r.state)}</p>
+        <p class="card-place">${esc(r.place)}, ${esc(r.district)}${/^Across /.test(r.district) ? "" : " district"}, ${esc(r.state)}</p>
         <p class="m-hook">${esc(r.hook)}</p>
       </div>
       <div class="m-cols">
         <div>
-          <h4>What people do</h4><p>${esc(r.does)}</p>
-          <h4>Process</h4><ol class="steps">${r.process.map(p => `<li>${esc(p)}</li>`).join("")}</ol>
-          <h4>Materials &amp; tools</h4><div class="mats">${r.materials.map(m => `<span>${esc(m)}</span>`).join("")}</div>
-          <h4>Cultural context</h4><p>${esc(r.context)}</p>
+          ${r.does ? `<h4>What people do</h4><p>${esc(r.does)}</p>` : ""}
+          ${r.story ? `<h4>The story</h4><p>${esc(r.story)}</p>` : ""}
+          ${r.process ? `<h4>Process</h4><ol class="steps">${r.process.map(p => `<li>${esc(p)}</li>`).join("")}</ol>` : ""}
+          ${r.technique ? `<h4>How it is made</h4><p>${esc(r.technique)}</p>` : ""}
+          <h4>${r.img ? "Colours &amp; tools" : "Materials &amp; tools"}</h4><div class="mats">${r.materials.map(m => `<span>${esc(m)}</span>`).join("")}</div>
+          ${r.context ? `<h4>Cultural context</h4><p>${esc(r.context)}</p>` : ""}
+          ${r.occasion ? `<h4>When it is made</h4><p>${esc(r.occasion)}</p>` : ""}
         </div>
         <div>
-          <h4>How you can engage</h4>
+          <h4>How you can take part</h4>
           <div class="engage">
-            ${row("Read about it", true, "Open to all", "")}
+            ${row("Learn about it", true, "Open to all", "")}
             ${row("Visit the place", e.visit, "Public place", "Not listed")}
             ${row("Watch the work", e.observe, "Confirmed", "Not confirmed yet")}
-            ${row("Try it yourself", e.participate, "Confirmed", "Not confirmed yet")}
-            ${e.contact ? row("Contact practitioner", true, "Allowed", "") : ""}
-            <p class="engage-note">${e.note ? esc(e.note) + " " : ""}${e.confirmedByPractitioner ? "Set by the practitioner (demo)." : (!e.participate ? "Nobody has confirmed a session yet, so we won't pretend there is one." : "")}</p>
+            ${row("Join a workshop", e.participate, "Confirmed", "Not confirmed yet")}
+            ${e.contact ? row("Contact the practitioner", true, "Allowed", "") : ""}
+            <p class="engage-note">${e.note ? esc(e.note) + " " : ""}${e.confirmedByPractitioner ? "Set by the practitioner." : (!e.participate ? "No practitioner has offered a workshop yet, so we won't pretend there is one." : "")}</p>
           </div>
-          <h4>Carried by</h4><p>${esc(r.community)}</p>
+          ${wsFor(r.id).map(w => `
+          <div class="ws-mini">
+            <p class="ws-mini-title">${esc(w.title)}</p>
+            <p class="ws-mini-meta">${esc(w.host)} · ${esc(w.when)} · ${esc(w.length)}</p>
+            <div class="ws-foot"><p class="ws-phone"><span>${esc(w.phone)}</span></p>
+            <button class="btn btn-primary btn-sm" type="button" data-book="${w.id}">Book · ${rupees(w.price)}</button></div>
+          </div>`).join("")}
+          <h4>Custodians</h4><p>${esc(r.community)}</p>
+          ${(() => { const v = MGMD[MGMD_FOR[r.id]]; if (!v) return ""; return `
+          <h4>From the village record</h4>
+          <dl class="mgmd">
+            <div><dt>Village</dt><dd>${esc(v.village)}, ${esc(v.block)} block, ${esc(v.district)}</dd></div>
+            <div><dt>Language</dt><dd>${esc(v.language)}</dd></div>
+            <div><dt>People</dt><dd>${v.population.toLocaleString("en-IN")}</dd></div>
+            <div><dt>Known for</dt><dd>${esc(v.known)}</dd></div>
+            ${v.festival ? `<div><dt>Festival</dt><dd>${esc(v.festival)}</dd></div>` : ""}
+            ${v.food ? `<div><dt>Food</dt><dd>${esc(v.food)}</dd></div>` : ""}
+            ${v.dress ? `<div><dt>Dress</dt><dd>${esc(v.dress)}</dd></div>` : ""}
+            ${v.ornament ? `<div><dt>Ornament</dt><dd>${esc(v.ornament)}</dd></div>` : ""}
+          </dl>
+          <p class="mgmd-src">Source: <a href="${esc(v.url)}" target="_blank" rel="noopener noreferrer">Mera Gaon Meri Dharohar</a>, Ministry of Culture</p>`; })()}
           <h4>Sources</h4>
-          <ul class="m-meta">${r.sources.map(s => `<li>${esc(s)}</li>`).join("")}<li>Last reviewed: ${esc(r.reviewed)}</li></ul>
+          <ul class="m-meta">${r.fig ? `<li>Image: ${esc(r.fig)}</li>` : ""}${r.sources.map(s => `<li>${esc(s)}</li>`).join("")}<li>Last reviewed: ${esc(r.reviewed)}</li></ul>
         </div>
       </div>`;
     if (typeof modal.showModal === "function") modal.showModal(); else modal.setAttribute("open", "");
@@ -473,11 +694,17 @@
     if (e.target.closest("[data-close]") || e.target === modal) modal.close();
   });
 
+  /* ---------- Practitioner insight (from the folk painting study) ---------- */
+  const practInsight = $("#practInsight");
+  if (practInsight && PT.insight) practInsight.innerHTML =
+    `<p class="pi-label">Why this matters</p><p class="pi-text">${esc(PT.insight.text)}</p><p class="pi-src">${esc(PT.sources[PT.insight.src] || "")}</p>`;
+
   /* ---------- Practitioner panel ---------- */
   const pRecord = $("#pRecord");
   pRecord.innerHTML = records.map(r => `<option value="${r.id}">${esc(r.name)} — ${esc(r.place)}</option>`).join("");
   function loadPract() {
-    const r = byId[pRecord.value], e = eng(r);
+    const r = byId[pRecord.value]; if (!r) return;
+    const e = eng(r);
     $("#pObserve").checked = !!e.observe;
     $("#pParticipate").checked = !!e.participate;
     $("#pContact").checked = !!e.contact;
@@ -495,7 +722,7 @@
   });
   $("#pReset").addEventListener("click", () => {
     overrides = {}; saveOverrides(); loadPract(); renderGrid(); runMatch($("#matchInput").value);
-    $("#pMsg").textContent = "All demo permissions reset.";
+    $("#pMsg").textContent = "All permissions reset.";
   });
 
   /* ---------- Language toggle (UI labels) ---------- */
@@ -505,7 +732,7 @@
     eyebrow: "डिजिटल विरासत · जम्मू-कश्मीर · पंजाब · उत्तराखंड",
     h1a: "अपनी जिज्ञासा का पीछा करें।", h1b: "जीवंत संस्कृति खोजें।",
     lede: "बताइए आपको क्या पसंद है — चित्रकारी, खाना बनाना, संगीत, हस्तकला। CurioTrail उसे असली सांस्कृतिक परंपराओं से जोड़ता है, उनके पीछे के लोग और प्रक्रिया दिखाता है, और ईमानदारी से बताता है कि आप कैसे जुड़ सकते हैं।",
-    nowShowing: "अभी दिख रहा है", heroBody: "CurioTrail आपकी पसंद से शुरू करता है और आपको उन लोगों तक ले जाता है जो पीढ़ियों से यह काम कर रहे हैं — काम कैसे होता है, कहाँ होता है, और क्या आप सच में देखने आ सकते हैं।", ctaMatch: "मेरे लिए खोजें", ctaExplore: "सभी 18 परंपराएँ देखें", navMatch: "मिलान", navExplore: "परंपराएँ", navTrails: "यात्राएँ", navPract: "कारीगरों के लिए",
+    nowShowing: "अभी दिख रहा है", heroBody: "CurioTrail आपकी पसंद से शुरू करता है और आपको उन लोगों तक ले जाता है जो पीढ़ियों से यह काम कर रहे हैं — काम कैसे होता है, कहाँ होता है, और क्या आप सच में देखने आ सकते हैं।", ctaMatch: "मेरे लिए खोजें", ctaExplore: "सभी 46 परंपराएँ देखें", navMatch: "मिलान", navExplore: "परंपराएँ", navTrails: "यात्राएँ", navPract: "कारीगरों के लिए",
     statRecords: "परंपरा रिकॉर्ड", statJK: "जम्मू-कश्मीर से", statPlaces: "स्थान", statTrails: "विरासत यात्राएँ",
     matchTitle: "बताइए, आपको क्या पसंद है।", matchSub: "जैसे किसी दोस्त से कहते हैं, वैसे ही लिखिए।", matchBtn: "खोजें",
     exploreTitle: "परंपराएँ खोजें", exploreSub: "क्षेत्र चुनें, फिर किसी भी रिकॉर्ड को खोलकर परंपरा के पीछे की कहानी देखें।",

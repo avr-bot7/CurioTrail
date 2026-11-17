@@ -148,16 +148,16 @@ window.CT_DATA = {
     },
     {
       id: "kud", name: "Kud Folk Dance", nameHi: "कुड नृत्य",
-      state: "Jammu & Kashmir", district: "Udhampur", place: "Jammu hills", category: "Performance",
-      tags: ["music", "spiritual"],
-      hook: "A ritual night dance of the Jammu hills, performed in thanks to local deities.",
-      does: "Dancers move in a circle through the night to flute, drum and narsingha, with steps changing as the rhythm rises.",
-      materials: ["Flute", "Drums", "Narsingha horn"],
-      process: ["Gather at night", "Invoke local deity", "Circle dance as rhythm builds"],
-      context: "Associated with harvest and devotional gatherings in the Jammu hill districts.",
-      community: "Village communities of the Jammu hills",
+      state: "Jammu & Kashmir", district: "Udhampur", place: "Ramnagar & the Jammu hills", category: "Performance",
+      tags: ["music", "spiritual", "history"],
+      hook: "A night-long dance of thanks to the Lok Devtas, the village gods of the Jammu hills, where the music decides every step.",
+      does: "After dark, villagers of every age gather in front of the deity's shrine and dance in a circle. The narsingha horn, chhaina cymbals, flute and drums set the beat, and the dancers follow it: slow and swaying at first, then faster as the rhythm climbs through the night.",
+      materials: ["Narsingha (curved brass horn)", "Chhaina (cymbals)", "Flute", "Dhol and other drums", "Kud songs in Dogri and Pahari"],
+      process: ["Gather at the village shrine after dark", "Offer thanks to the Lok Devta", "Musicians set the rhythm", "Dancers circle and follow the beat", "The tempo rises until dawn"],
+      context: "A ritual dance in honour of the Lok Devtas, the local deities believed to protect the village, its cattle and its crops. It is danced mostly in the summer and rainy months, and is strongest in the hills of Udhampur (Ramnagar), Doda (Bhaderwah), Reasi and Kathua (Billawar).",
+      community: "Village communities of the Jammu hills; men and women of all ages join the circle",
       engagement: { visit: true, observe: false, participate: false },
-      sources: ["J&K Academy of Art, Culture & Languages"], reviewed: "Oct 2026", hue: 220
+      sources: ["J&K Academy of Art, Culture & Languages", "J&K Tourism"], reviewed: "Nov 2026", hue: 220
     },
     {
       id: "chhakri", name: "Chhakri Folk Music", nameHi: "छकरी लोक संगीत",
@@ -250,21 +250,197 @@ window.CT_DATA = {
       community: "Ashrams and teachers of Rishikesh",
       engagement: { visit: true, observe: false, participate: false },
       sources: ["UNESCO ICH list", "Uttarakhand Tourism"], reviewed: "Oct 2026", hue: 150
+    },
+    {
+      id: "phulkari", name: "Phulkari", nameHi: "फुलकारी",
+      state: "Punjab", district: "Patiala", place: "Patiala", category: "Textile",
+      tags: ["textile", "handwork", "history"],
+      hook: "Flower-work in silk floss, darned from the back of the cloth until the whole surface glows.",
+      does: "Embroiderers count threads on hand-spun khaddar and darn untwisted silk (pat) in long and short stitches, building geometric flowers without drawing them first.",
+      materials: ["Khaddar cotton cloth", "Untwisted silk floss (pat)", "Needle"],
+      process: ["Choose and stretch the khaddar", "Count threads for the motif", "Darn from the reverse side", "Fill the field, or cover it fully for a bagh"],
+      context: "Made by women for weddings and passed between generations as dowry pieces. Holds a GI tag.",
+      community: "Women embroiderers of Patiala and nearby villages",
+      engagement: { visit: true, observe: false, participate: false },
+      sources: ["GI Registry of India", "Punjab Tourism"], reviewed: "Nov 2026", hue: 22
+    },
+    {
+      id: "kashmir-carpet", name: "Kashmir Hand-knotted Carpet", nameHi: "कश्मीरी हाथ से बुना कालीन",
+      state: "Jammu & Kashmir", district: "Srinagar", place: "Srinagar", category: "Textile",
+      tags: ["textile", "handwork", "history"],
+      hook: "Hundreds of knots to the square inch, tied one at a time while a weaver reads the design aloud in a coded script.",
+      does: "Weavers tie each knot of wool or silk around the warp, following the talim, a written colour code that is chanted as the work goes on.",
+      materials: ["Silk or wool yarn", "Cotton or silk warp", "Vertical loom", "Talim (coded design sheet)"],
+      process: ["Prepare the talim from the design", "Set the warp on the loom", "Knot row by row to the chanted code", "Beat down, trim and wash"],
+      context: "Brought to the valley in the medieval period and still woven in homes across Srinagar. Holds a GI tag.",
+      community: "Carpet weavers (kaleen baaf) of Srinagar",
+      engagement: { visit: true, observe: false, participate: false },
+      sources: ["GI Registry of India", "J&K Handicrafts Department"], reviewed: "Nov 2026", hue: 350
+    },
+    {
+      id: "punjabi-jutti", name: "Punjabi Jutti", nameHi: "पंजाबी जूती",
+      state: "Punjab", district: "Patiala", place: "Patiala", category: "Craft",
+      tags: ["handwork", "textile"],
+      hook: "Flat leather shoes with curled toes, stitched by hand and covered in gold and silver thread.",
+      does: "Cobblers cut and hand-stitch tanned leather, and embroiderers cover the upper with tilla and dabka thread work.",
+      materials: ["Tanned leather", "Tilla and dabka thread", "Awl and waxed thread"],
+      process: ["Cut the sole and upper", "Embroider the upper", "Hand-stitch upper to sole", "Shape the toe"],
+      context: "Worn at weddings and festivals; Patiala and Amritsar bazaars are known for them.",
+      community: "Jutti makers of Patiala",
+      engagement: { visit: true, observe: false, participate: false },
+      sources: ["Punjab Tourism"], reviewed: "Nov 2026", hue: 42
+    },
+    {
+      id: "kashmiri-bread", name: "Kandur Breads of Kashmir", nameHi: "कश्मीरी कांदुर रोटियाँ",
+      state: "Jammu & Kashmir", district: "Srinagar", place: "Srinagar", category: "Food",
+      tags: ["food", "history"],
+      hook: "Before sunrise, every neighbourhood baker slaps dough onto the walls of a clay oven sunk into the floor.",
+      does: "The kandur bakes girda, lavasa, tsochvoru and bakarkhani in a deep clay oven, and families buy them warm for morning tea.",
+      materials: ["Clay oven (kandur)", "Wheat flour", "Sesame and poppy seeds", "Wood fire"],
+      process: ["Fire the oven before dawn", "Shape and dimple the dough", "Slap it onto the oven wall", "Lift out with iron hooks"],
+      context: "The kandur shop is a daily meeting place in Kashmiri neighbourhoods; the trade runs in families.",
+      community: "Kandur bakers of Srinagar",
+      engagement: { visit: true, observe: false, participate: false },
+      sources: ["J&K Tourism"], reviewed: "Nov 2026", hue: 30
+    },
+    {
+      id: "noon-chai", name: "Noon Chai", nameHi: "नून चाय",
+      state: "Jammu & Kashmir", district: "Srinagar", place: "Kashmir Valley", category: "Food",
+      tags: ["food"],
+      hook: "A salty, rose-pink tea brewed for a long time and poured from a samovar.",
+      does: "Green tea leaves are boiled with a pinch of soda until the brew turns deep red, then milk and salt are added and it is aerated until pink.",
+      materials: ["Green tea leaves", "Baking soda", "Milk and salt", "Samovar"],
+      process: ["Boil leaves with soda", "Reduce to a dark concentrate", "Add milk and salt", "Aerate by pouring until pink"],
+      context: "Drunk morning and afternoon with kandur breads, and served to every guest.",
+      community: "Households across the Kashmir valley",
+      engagement: { visit: true, observe: false, participate: false },
+      sources: ["J&K Tourism"], reviewed: "Nov 2026", hue: 335
+    },
+    {
+      id: "rouf", name: "Rouf", nameHi: "रउफ़ नृत्य",
+      state: "Jammu & Kashmir", district: "Srinagar", place: "Kashmir Valley", category: "Performance",
+      tags: ["music"],
+      hook: "Two rows of women, arms linked, stepping forward and back as they sing to each other.",
+      does: "Women face each other in lines and move with small, rocking steps while one row sings a verse and the other answers.",
+      materials: ["Voices", "Traditional pheran and headdress"],
+      process: ["Form two facing rows", "Link arms", "Sing in call and answer", "Step forward and back in time"],
+      context: "Performed at Eid, on Ramadan nights, at weddings and to welcome spring.",
+      community: "Women of the Kashmir valley",
+      engagement: { visit: false, observe: false, participate: false },
+      sources: ["J&K Academy of Art, Culture & Languages"], reviewed: "Nov 2026", hue: 300
+    },
+    {
+      id: "bhangra", name: "Bhangra", nameHi: "भांगड़ा",
+      state: "Punjab", district: "Across Punjab", place: "Rural Punjab", category: "Performance",
+      tags: ["music"],
+      hook: "The harvest dance of Punjab, driven by the dhol and danced with shoulders, arms and leaps.",
+      does: "Dancers move in a circle to the dhol, raising their arms and calling out boliyan, short sung couplets.",
+      materials: ["Dhol", "Chimta and algoze", "Kurta, tehmat and pagg"],
+      process: ["Dhol sets the beat", "Dancers circle and lift", "Boliyan are called out", "Tempo builds to the end"],
+      context: "Danced at Baisakhi, the spring harvest festival, and at weddings.",
+      community: "Village dance troupes across Punjab",
+      engagement: { visit: false, observe: false, participate: false },
+      sources: ["Punjab Tourism"], reviewed: "Nov 2026", hue: 48
+    },
+    {
+      id: "sanjhi", name: "Sanjhi", nameHi: "सांझी",
+      state: "Punjab & Haryana", district: "Across both states", place: "Village courtyards", category: "Visual art",
+      tags: ["painting", "handwork", "spiritual"],
+      hook: "During Navratri, girls in Punjab and Haryana build Sanjhi Mata on the village wall from hundreds of tiny clay stars.",
+      does: "Girls mould little clay stars, discs and triangles and let them dry. Then they press them onto fresh mud and dung on an outer wall, using dung as glue, until the goddess stands with both arms raised, covered in clay jewellery, with a small figure of her brother beside her.",
+      materials: ["Clay", "Cow dung", "Lime and turmeric", "Colours", "Cloth and muslin to dress her"],
+      process: ["Coat an outer wall with mud and dung", "Mould and dry clay stars, discs and triangles", "Build the body, raised arms and sun-rays", "Add jewellery and the figures around her", "Dress her and sing through the nine nights"],
+      context: "Sanjhi Mata, a form of the mother goddess, is worshipped through the nine nights of Navratri in the villages of Punjab and Haryana, and in a similar form in Rajasthan and the Braj region. On Dussehra she is taken down and her face is kept. Women carry lamps in pots to the village pond in a singing procession, then share sweets bought with grain collected from every house.",
+      community: "Girls and women of Punjab and Haryana villages",
+      engagement: { visit: false, observe: false, participate: false },
+      sources: ["Living Traditions: Tribal and Folk Paintings of India (CCRT, Ministry of Culture, 2017)", "North Zone Cultural Centre, Patiala"], reviewed: "Nov 2026", hue: 18
+    },
+    {
+      id: "aipan", name: "Aipan", nameHi: "ऐपण",
+      state: "Uttarakhand", district: "Almora", place: "Kumaon", category: "Visual art",
+      tags: ["painting", "spiritual", "history"],
+      hook: "Doorsteps and prayer rooms painted in rice paste over red earth, drawn freehand with three fingers.",
+      does: "Women coat the floor or wall with geru (red ochre). Once it is ready, they draw geometric and sacred patterns freehand in rice paste using the last three fingers of the right hand. The same art decorates mango-wood seats (chowkis), wall panels, paper and cloth.",
+      materials: ["Geru (red ochre)", "Rice paste", "Mango-wood chowkis", "Cloth and paper"],
+      process: ["Coat the surface with geru", "Let the base dry", "Draw the design freehand in rice paste", "Fill in borders and the motif for the occasion"],
+      context: "Locally called likhai, “writing”. Made for pujas, festivals and life events from birth and the sacred-thread ceremony to marriage and death, with a special design for each occasion.",
+      community: "Women of Kumaoni households",
+      engagement: { visit: false, observe: false, participate: false },
+      sources: ["E. Sharma, “Tribal Folk Arts of India”, JIARM 3(5), 2015"], reviewed: "Nov 2026", hue: 12
     }
   ],
 
   trails: [
-    { id: "dogra", title: "Dogra Heritage Trail", mode: "Explore Nearby", region: "Jammu region",
+    { id: "dogra", title: "Dogra Heritage Trail", mode: "Within one region", region: "Jammu region",
       stops: ["kud", "dogra-dham", "basohli-painting", "basohli-pashmina"],
       blurb: "Hill dance, Dogra food and the Basohli painting school." },
-    { id: "kashmir-craft", title: "Kashmir Craft Trail", mode: "Explore Nearby", region: "Srinagar & Budgam",
+    { id: "kashmir-craft", title: "Kashmir Craft Trail", mode: "Within one region", region: "Srinagar & Budgam",
       stops: ["papier-mache", "sozni", "kani", "walnut-carving", "namda"],
       blurb: "Five living crafts within a day's reach of Srinagar." },
-    { id: "taste", title: "Taste of the Himalaya", mode: "Explore by Culture", region: "J&K → Uttarakhand",
+    { id: "taste", title: "Taste of the Himalaya", mode: "Across regions", region: "J&K → Uttarakhand",
       stops: ["wazwan", "saffron", "dogra-dham", "kumaoni-food"],
       blurb: "Feasts, spice fields and hill sweets across regions." },
-    { id: "metal", title: "Hammered Metal Trail", mode: "Explore by Culture", region: "Punjab → Uttarakhand",
+    { id: "metal", title: "Hammered Metal Trail", mode: "Across regions", region: "Punjab → Uttarakhand",
       stops: ["thathera", "almora-tamta"],
       blurb: "Two communities that beat metal by hand." }
   ]
 };
+
+// Village profiles from Mera Gaon Meri Dharohar (mgmd.gov.in), Ministry of Culture, Govt. of India.
+// Paraphrased from each village's MGMD page; figures as listed there.
+window.CT_DATA.mgmd = {
+  basohli: { village: "Basohli", block: "Basohli", district: "Kathua", language: "Dogri", population: 5433,
+    known: "Farming and livestock; small-scale industry and dairy alongside", festival: "Holi, with Holika Dahan the night before",
+    food: "Dal-chawal", dress: "Kurta-pajama", ornament: "Bangles", url: "https://mgmd.gov.in/village-details/LaQfLGJMAgQ5Sv2t3Ebn" },
+  ramnagar: { village: "Ramnagar", block: "Ramnagar", district: "Udhampur", language: "Dogri", population: 6292,
+    known: "Old temples, including the Narsingh Temple built by the village's ancestors", festival: "Diwali, with mitha madra (a sweet of curd, dry fruit and sugar)",
+    food: "Kalari, made for festivals and feasts", dress: "Shalwar-kameez, often sewn by women of the village", ornament: "Jhumka (gold or silver earrings)", url: "https://mgmd.gov.in/village-details/T0QsbhIjSmR8JbrqKpxt" },
+  kanihama: { village: "Bata Pora Kanihama", block: "Magam", district: "Budgam", language: "Kashmiri", population: 2743,
+    known: "Apple orchards; textile needlework recorded as a living craft", festival: "", food: "Rogan josh",
+    dress: "Pheran, worn through winter", ornament: "", url: "https://mgmd.gov.in/village-details/7ONcRTHNeHtCcLmUYgu2" },
+  drangbal: { village: "Drangbal", block: "Pampore", district: "Pulwama", language: "Kashmiri", population: 21680,
+    known: "High-quality saffron; most families farm", festival: "", food: "Kabab, skewered on a wooden takhtaa",
+    dress: "Kurta-pajama", ornament: "Haar (necklace worn after marriage)", url: "https://mgmd.gov.in/village-details/z6kT1DM8FtBoYU2Y5t80" }
+};
+// Which tradition draws on which village profile.
+window.CT_DATA.mgmdFor = { "basohli-painting": "basohli", "basohli-pashmina": "basohli", "dogra-dham": "ramnagar", "kani": "kanihama", "saffron": "drangbal" };
+
+// DEMO workshops. Hosts and phone numbers are placeholders for the hackathon demo, not real people.
+// +91 00000 xxxxx is not a valid Indian number, so nobody gets called by mistake.
+// price: rupees per person. days: weekdays the session runs (0 = Sunday). slots: start times.
+// The booking flow in app.js has no payment gateway; "Pay" only shows a confirmation.
+window.CT_DATA.workshops = [
+  { id: "w-basohli", record: "basohli-painting", title: "Basohli painting: from wasli to first miniature", host: "Basohli painters' studio",
+    phone: "+91 00000 10101", place: "Basohli, Kathua", when: "Weekends, October to March", length: "2 days", size: "Up to 8", language: "Dogri, Hindi",
+    price: 3500, max: 8, days: [0, 6], slots: ["10:00", "14:00"] },
+  { id: "w-phulkari", record: "phulkari", title: "Phulkari: darn your first bagh motif", host: "Patiala phulkari circle",
+    phone: "+91 00000 10108", place: "Patiala", when: "Wednesdays and Saturdays", length: "3 hours", size: "Up to 10", language: "Punjabi, Hindi",
+    price: 1400, max: 10, days: [3, 6], slots: ["11:00", "15:00"] },
+  { id: "w-carpet", record: "kashmir-carpet", title: "Tie your first knots on a carpet loom", host: "Srinagar kaleen baaf family",
+    phone: "+91 00000 10109", place: "Srinagar", when: "Monday to Friday", length: "Half day", size: "Up to 4", language: "Kashmiri, Urdu",
+    price: 1800, max: 4, days: [1, 2, 3, 4, 5], slots: ["09:30", "14:00"] },
+  { id: "w-sozni", record: "sozni", title: "Sozni stitches for beginners", host: "Women's sozni collective",
+    phone: "+91 00000 10103", place: "Srinagar", when: "Weekday mornings", length: "4 sessions", size: "Up to 10", language: "Kashmiri, Hindi",
+    price: 2400, max: 10, days: [1, 2, 3, 4, 5], slots: ["10:00"] },
+  { id: "w-kani", record: "kani", title: "Reading the talim at a Kani loom", host: "Kanihama weavers",
+    phone: "+91 00000 10104", place: "Kanihama, Budgam", when: "Tuesdays, Thursdays and Saturdays", length: "Half day", size: "Up to 4", language: "Kashmiri",
+    price: 1800, max: 4, days: [2, 4, 6], slots: ["10:00", "14:30"] },
+  { id: "w-naqashi", record: "papier-mache", title: "Naqashi: painting florals on papier-mâché", host: "Old-city naqash workshop",
+    phone: "+91 00000 10102", place: "Srinagar", when: "Tuesdays and Saturdays", length: "3 hours", size: "Up to 6", language: "Kashmiri, Urdu, Hindi",
+    price: 1200, max: 6, days: [2, 6], slots: ["11:00", "15:00"] },
+  { id: "w-walnut", record: "walnut-carving", title: "Walnut carving: first cuts", host: "Downtown woodcarvers",
+    phone: "+91 00000 10106", place: "Srinagar", when: "Saturdays", length: "2 sessions", size: "Up to 5", language: "Kashmiri, Hindi",
+    price: 2000, max: 5, days: [6], slots: ["10:00"] },
+  { id: "w-jutti", record: "punjabi-jutti", title: "Stitch and embroider a pair of juttis", host: "Patiala jutti makers",
+    phone: "+91 00000 10110", place: "Patiala", when: "Fridays and Saturdays", length: "2 sessions", size: "Up to 6", language: "Punjabi, Hindi",
+    price: 2200, max: 6, days: [5, 6], slots: ["10:30"] },
+  { id: "w-thathera", record: "thathera", title: "Beat a brass bowl with a thathera", host: "Jandiala Guru thathera family",
+    phone: "+91 00000 10107", place: "Jandiala Guru, Amritsar", when: "Weekdays", length: "Half day", size: "Up to 6", language: "Punjabi, Hindi",
+    price: 1500, max: 6, days: [1, 2, 3, 4, 5], slots: ["09:00", "13:00"] },
+  { id: "w-kandur", record: "kashmiri-bread", title: "Dawn at the kandur: bake girda and lavasa", host: "Neighbourhood kandur, old Srinagar",
+    phone: "+91 00000 10111", place: "Srinagar", when: "Every morning except Friday", length: "2 hours", size: "Up to 4", language: "Kashmiri, Urdu",
+    price: 900, max: 4, days: [0, 1, 2, 3, 4, 6], slots: ["06:00", "07:00"] },
+  { id: "w-kalari", record: "dogra-dham", title: "Making kalari the Ramnagar way", host: "Ramnagar home kitchen",
+    phone: "+91 00000 10105", place: "Ramnagar, Udhampur", when: "Sundays", length: "3 hours", size: "Up to 6", language: "Dogri, Hindi",
+    price: 1100, max: 6, days: [0], slots: ["11:00"] }
+];

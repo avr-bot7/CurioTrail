@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,600&family=Inter:wght@400;500;600;700&family=Noto+Serif+Devanagari:wght@400;600&family=Noto+Sans+Devanagari:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="preload" as="image" href="assets/img/papier-mache.webp">
-  <link rel="stylesheet" href="styles.css?v=21">
+  <link rel="stylesheet" href="styles.css?v=31">
 </head>
 <body>
   <header class="nav" id="nav">
@@ -21,7 +21,9 @@
     <nav class="nav-links" aria-label="Main">
       <a href="#match" data-i18n="navMatch">Find a match</a>
       <a href="#explore" data-i18n="navExplore">Traditions</a>
-      <a href="#trails" data-i18n="navTrails">Trails</a>
+      <a href="workshops.html">Workshops</a>
+      <a href="marketplace.html">Marketplace</a>
+      <a href="#trails" data-i18n="navTrails">Routes</a>
       <a href="#practitioners" data-i18n="navPract">For practitioners</a>
     </nav>
     <button class="lang-btn" id="langBtn" type="button">हिंदी</button>
@@ -39,10 +41,10 @@
           <span class="ht-line"><span id="htPre">Into </span><em class="swap" id="swapWord">painting</em><span id="htPost">?</span></span>
         </h1>
         <p class="hero-line reveal-hero"><span class="swap" id="swapLine">In Srinagar, they paint flowers onto boxes made of paper</span></p>
-        <p class="hero-body reveal-hero" data-i18n="heroBody">CurioTrail starts from what you already enjoy and takes you to the people who’ve done it for generations — how the work is done, where it happens, and whether you’re actually welcome to watch.</p>
+        <p class="hero-body reveal-hero" data-i18n="heroBody">CurioTrail starts from what you already enjoy and leads you to the communities who keep a tradition alive — how the work is done, what it means to the village, and how to learn it from them, on their terms.</p>
         <div class="hero-actions reveal-hero">
           <a class="btn btn-primary" href="#match"><span data-i18n="ctaMatch">Find what fits me</span><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11m-4-4 4 4-4 4"/></svg></a>
-          <a class="btn btn-glass" href="#explore" data-i18n="ctaExplore">See all 18 traditions</a>
+          <a class="btn btn-glass" href="#explore" data-i18n="ctaExplore">See all 46 traditions</a>
         </div>
       </div>
 
@@ -82,11 +84,11 @@
       <div class="wrap statement-inner">
         <p class="eyebrow light" data-reveal>Why this is different</p>
         <blockquote data-reveal>A tradition existing doesn’t mean you’re invited</blockquote>
-        <p class="statement-body" data-reveal>Most travel sites stop at “go here”. We don’t list a workshop or a visit until the person who does the work says yes. Until then, you can still read about it — properly.</p>
+        <p class="statement-body" data-reveal>A craft is not a sightseeing stop. Nothing beyond reading shows up until the people who practise it say yes, and when they teach, you contact them directly.</p>
         <div class="stats" data-reveal>
-          <div><strong data-count="18" id="statRecords">0</strong><span>traditions documented</span></div>
-          <div><strong data-count="12" id="statJK">0</strong><span>from Jammu &amp; Kashmir</span></div>
-          <div><strong data-count="4" id="statTrails">0</strong><span>day trails</span></div>
+          <div><strong data-count="46" id="statRecords">0</strong><span>traditions documented</span></div>
+          <div><strong data-count="16" id="statJK">0</strong><span>from Jammu &amp; Kashmir</span></div>
+          <div><strong data-count="4" id="statTrails">0</strong><span>cultural routes</span></div>
           <div><strong data-count="0" id="statFake">0</strong><span>made-up experiences</span></div>
         </div>
       </div>
@@ -107,10 +109,10 @@
           <label><span data-i18n="fEngage">I want to</span>
             <select id="fEngage">
               <option value="">Anything</option>
-              <option value="learn">Read about it</option>
+              <option value="learn">Learn about it</option>
               <option value="visit">Visit the place</option>
               <option value="observe">Watch it happen</option>
-              <option value="participate">Try it myself</option>
+              <option value="participate">Join a workshop</option>
             </select></label>
           <label class="search"><span data-i18n="fSearch">Search</span><input id="fSearch" type="search" placeholder="Kani, saffron, Basohli…"></label>
         </div>
@@ -119,13 +121,14 @@
       </div>
     </section>
 
+
     <!-- TRAILS -->
-    <section class="section tinted" id="trails" data-trail>
+    <section class="section" id="trails" data-trail>
       <div class="wrap">
         <div class="head" data-reveal>
-          <p class="eyebrow">03 · Trails</p>
-          <h2 data-i18n="trailsTitle">Make a day of it</h2>
-          <p data-i18n="trailsSub">Some trails keep you in one valley. Others follow one interest across three states. Check timings with each stop before you go.</p>
+          <p class="eyebrow">03 · Routes</p>
+          <h2 data-i18n="trailsTitle">Follow one tradition across villages</h2>
+          <p data-i18n="trailsSub">Each route links places that share a craft, a food or a faith. Ask each community before you go.</p>
         </div>
         <div class="trails" id="trailList"></div>
       </div>
@@ -137,21 +140,21 @@
         <div data-reveal>
           <p class="eyebrow">04 · For practitioners</p>
           <h2 data-i18n="practTitle">If it’s your craft, it’s your call</h2>
-          <p class="lead" data-i18n="practSub">Weavers, cooks, musicians and painters decide how visitors can engage. Nothing beyond “read about it” shows up until you switch it on.</p>
+          <p class="lead" data-i18n="practSub">Weavers, cooks, musicians and painters decide how others learn from them. Nothing beyond “learn about it” shows up until you switch it on.</p>
           <ol class="ladder">
-            <li><span class="lv lv-learn">Read</span>Anyone can read the record.</li>
+            <li><span class="lv lv-learn">Learn</span>Anyone can read the record.</li>
             <li><span class="lv lv-visit">Visit</span>There’s a public place to go.</li>
-            <li><span class="lv lv-observe">Watch</span>Visitors may watch the work.</li>
-            <li><span class="lv lv-part">Try</span>Visitors may join a session.</li>
+            <li><span class="lv lv-observe">Watch</span>Learners may watch the work.</li>
+            <li><span class="lv lv-part">Workshop</span>You teach a workshop.</li>
           </ol>
+          <aside class="pract-insight" id="practInsight"></aside>
         </div>
         <form class="pract-card" id="practForm" data-reveal>
-          <p class="demo-tag">Demo · saved in this browser only</p>
           <label><span>Your tradition</span><select id="pRecord"></select></label>
           <fieldset>
-            <legend>Visitors may…</legend>
+            <legend>Learners may…</legend>
             <label class="switch"><input type="checkbox" id="pObserve"><span class="track"></span>Watch me work</label>
-            <label class="switch"><input type="checkbox" id="pParticipate"><span class="track"></span>Join a session</label>
+            <label class="switch"><input type="checkbox" id="pParticipate"><span class="track"></span>Join a workshop I run</label>
             <label class="switch"><input type="checkbox" id="pContact"><span class="track"></span>Contact me directly</label>
           </fieldset>
           <label><span>A note for visitors (optional)</span><textarea id="pNote" rows="2" placeholder="Weekends only, October to March"></textarea></label>
@@ -174,7 +177,7 @@
         <div class="rules">
           <article data-reveal><span>01</span><h3>Interest first</h3><p>You start from what you enjoy, not a map. Every match says why it fits.</p></article>
           <article data-reveal><span>02</span><h3>Show the work</h3><p>Process, materials, history and who carries it on — with sources and a review date.</p></article>
-          <article data-reveal><span>03</span><h3>No invented visits</h3><p>Watching or joining is shown only after the practitioner confirms it.</p></article>
+          <article data-reveal><span>03</span><h3>Nothing invented</h3><p>Watching or a workshop is shown only after the practitioner offers it.</p></article>
           <article data-reveal><span>04</span><h3>Credit the community</h3><p>Knowledge is attributed. Practitioners can correct anything written about them.</p></article>
         </div>
       </div>
@@ -187,13 +190,15 @@
         <strong>CurioTrail</strong>
         <span>Team PyTorch · Innovathon 2.0 · Digital Heritage, Culture &amp; Inclusive Innovation</span>
       </div>
-      <p class="footer-credits">Facts from district websites, the GI Registry of India, UNESCO and state tourism departments. Photos from Wikimedia Commons, used under their CC BY, CC BY-SA, CC0 and public-domain licences; full credits are listed in <code>photos.js</code>.</p>
+      <p class="footer-credits">Village profiles from Mera Gaon Meri Dharohar (mgmd.gov.in), Ministry of Culture. Craft facts from district websites, the GI Registry of India and UNESCO. Folk painting images and facts from <cite>Living Traditions</cite> (CCRT, Ministry of Culture, 2017) and Sharma (2015), <cite>JIARM</cite> 3(5), credited on each painting. Photos from Wikimedia Commons, used under their CC BY, CC BY-SA, CC0 and public-domain licences; full credits are listed in <code>photos.js</code>.</p>
     </div>
   </footer>
 
   <nav class="dock" aria-label="Quick navigation">
     <a href="#match"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg><span>Match</span></a>
     <a href="#explore"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m15.5 8.5-2 5-5 2 2-5z"/></svg><span>Explore</span></a>
+    <a href="workshops.html"><svg viewBox="0 0 24 24"><path d="M3 9l9-5 9 5-9 5z"/><path d="M7 11.5V16c1.5 1.5 3 2 5 2s3.5-.5 5-2v-4.5"/></svg><span>Learn</span></a>
+    <a href="marketplace.html"><svg viewBox="0 0 24 24"><path d="M4 9h16l-1.2 10.2a1 1 0 0 1-1 .8H6.2a1 1 0 0 1-1-.8z"/><path d="M8.5 9V7a3.5 3.5 0 0 1 7 0v2"/></svg><span>Market</span></a>
     <a href="#trails"><svg viewBox="0 0 24 24"><path d="M4 19c3-6 6-4 8-9s5-6 8-6" stroke-dasharray="2 3"/><circle cx="20" cy="4" r="1.5"/></svg><span>Trails</span></a>
     <a href="#practitioners"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c1-4 4-6 7-6s6 2 7 6"/></svg><span>Makers</span></a>
   </nav>
@@ -202,8 +207,14 @@
     <div class="modal-body" id="modalBody"></div>
   </dialog>
 
-  <script src="data.js?v=21"></script>
-  <script src="photos.js?v=21"></script>
-  <script src="app.js?v=21"></script>
+  <dialog id="bookModal" class="modal book-modal" aria-labelledby="bkTitle">
+    <div id="bookBody"></div>
+  </dialog>
+
+  <script src="data.js?v=31"></script>
+  <script src="paintings.js?v=31"></script>
+  <script src="photos.js?v=31"></script>
+  <script src="app.js?v=31"></script>
+  <script type="module" src="leaves.js?v=31"></script>
 </body>
 </html>
