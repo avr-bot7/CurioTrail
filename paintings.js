@@ -4,13 +4,27 @@
 //     and Training (CCRT), Ministry of Culture, Government of India, 2017 (src: "ccrt")
 //   - Ekta Sharma, "Tribal Folk Arts of India", Journal of International Academic Research
 //     for Multidisciplinary 3(5), June 2015, pp. 300-308 (src: "jiarm")
-// Images are figures reproduced from those two publications, credited on every card.
+// Images are figures reproduced from those two publications, credited on every card,
+// except Thangka, whose photo is from Wikimedia Commons (CC BY-SA 4.0, src: "ralang").
 window.CT_PAINTINGS = {
   sources: {
     ccrt: "Living Traditions: Tribal and Folk Paintings of India (CCRT, Ministry of Culture, 2017)",
-    jiarm: "E. Sharma, “Tribal Folk Arts of India”, JIARM 3(5), 2015"
+    jiarm: "E. Sharma, “Tribal Folk Arts of India”, JIARM 3(5), 2015",
+    ralang: "Photo: Prof Ranga Sai, Wikimedia Commons, CC BY-SA 4.0 (commons.wikimedia.org/wiki/File:Thangka_at_Ralang_Monastery_sikkim.jpg)"
   },
   items: [
+    {
+      id: "thangka", size: [888, 1200], name: "Thangka Scroll Painting", nameHi: "थंका चित्रकला", state: "Ladakh & Sikkim", surface: "cloth",
+      district: "Leh", place: "Hemis and the Leh monasteries", tags: ["painting", "handwork", "spiritual", "history"], hue: 30,
+      centres: "Leh and Hemis in Ladakh; Rumtek and Ralang in Sikkim; Dharamshala in Himachal Pradesh; Tawang in Arunachal Pradesh",
+      community: "Monk painters and lay thangka artists (lhadripa) of the Himalayan Buddhist communities",
+      hook: "A painted Buddhist scroll that can be rolled up and carried over the mountains, then hung in a monastery to guide meditation.",
+      story: "Thangka means “something that is rolled up”. Monks once carried these scrolls from valley to valley to teach the life of the Buddha, the wheel of life and the paths to awakening. Each one is made for prayer and meditation, not decoration, and the deity on it is drawn to exact proportions so it can be recognised and visualised. The one shown here is Vaisravana, guardian of the north and giver of wealth, riding a snow lion with a victory banner, while a mongoose spills jewels at his feet. At the Hemis festival in Ladakh, a giant thangka of Guru Padmasambhava is unrolled on the monastery wall once every twelve years.",
+      technique: "Cotton cloth is stretched on a frame and coated with a paste of chalk and animal glue, then rubbed smooth with a stone. The painter draws the figure on a fixed grid of proportions, lays in flat mineral colours, shades them slowly, and finishes with gold. Last of all the eyes are painted in, a step that brings the image to life, and the painting is sewn into a silk brocade mount so it can be rolled.",
+      colours: ["Blue from lapis lazuli and azurite", "Green from malachite", "Red from cinnabar", "Gold leaf and gold paint", "Chalk-and-glue ground", "Silk brocade mount"],
+      occasion: "Monastery festivals, prayer and meditation; a new thangka is commissioned for a birth, an illness or a death",
+      fig: "Thangka of Vaisravana in its brocade mount, Ralang Monastery, Sikkim", src: "ralang"
+    },
     {
       id: "pithora", size: [1200, 809], name: "Pithora", nameHi: "पिथोरा", state: "Gujarat & Madhya Pradesh", surface: "wall",
       district: "Panchmahal", place: "Rathwa villages", tags: ["painting", "handwork", "spiritual"], hue: 28,
