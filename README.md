@@ -17,6 +17,8 @@ Built by **Team PyTorch** for Innovathon 2.0 at the University of Jammu (theme: 
 - **For practitioners** – a demo panel where a craftsperson sets what visitors may do (read / visit / watch / try)
 - English / Hindi toggle
 
+- **Plan a visit (voice or text)** – say "I'm visiting Basohli on Saturday with 2 friends, budget ₹20,000, we like painting" and get the real sessions that run that day nearby, the cost for the group and what's left of the budget. Voice uses the browser's own speech recognition (Chrome, Edge). Suggestions only ever come from CurioTrail's listings.
+
 ## Running it
 
 No build step and no dependencies. It's plain HTML, CSS and JavaScript.
@@ -25,7 +27,16 @@ No build step and no dependencies. It's plain HTML, CSS and JavaScript.
 python -m http.server 5173
 ```
 
-Then open http://localhost:5173. (Opening `index.html` directly also works, but a local server is closer to how it'll be hosted.)
+Then open http://localhost:5173.
+
+### AI for the visit planner (optional, free)
+
+Run the site with `python server.py` instead (same port, 5173). To switch on AI reading and summaries, copy `.env.example` to `.env` and add a free key:
+
+- **Groq** (fast): create a key at console.groq.com, then `GROQ_API_KEY=...`
+- **Gemini**: create a key at aistudio.google.com, then `GEMINI_API_KEY=...`
+
+The key stays in `.env` on your computer: it is git-ignored, the server never serves it, and it only accepts the planner's two fixed tasks. Without a key, the planner still works with its built-in rules. (Opening `index.html` directly also works, but a local server is closer to how it'll be hosted.)
 
 ## Files
 

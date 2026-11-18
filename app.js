@@ -536,7 +536,7 @@
           <p class="mk-meta"><span>${esc(w.length)}</span><span>${esc(w.size)}</span><span>${esc(w.language)}</span></p>
           <div class="mk-foot">
             <p class="mk-price"><strong>${rupees(w.price)}</strong></p>
-            <button class="btn btn-primary" type="button" data-book="${w.id}">Book a slot</button>
+            <button class="btn btn-primary" type="button" data-book="${w.id}">Buy</button>
           </div>
         </div>
       </article>`;
@@ -792,4 +792,7 @@
     applyHeroLang();
     $("#matchInput").placeholder = lang === "en" ? "I like painting and fiddly handwork" : "जैसे: मुझे चित्रकारी और बारीक हस्तकला पसंद है";
   });
+
+  // Shared with planner.js (the visit planner), which builds on the same data and helpers.
+  window.CT_APP = { records, byId, tags, workshops: WORKSHOPS, detectTags, eng, rupees, fmtTime, esc };
 })();

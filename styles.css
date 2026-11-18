@@ -543,3 +543,65 @@ section[data-trail] > .trail-art { opacity: .6; }
 .dock a[aria-current="page"] { color: #fff; background: rgba(255, 255, 255, .12); }
 .subpage main { min-height: 100svh; }
 @media (max-width: 960px) { .dock a { padding: 6px 4px; min-width: 0; } }
+
+/* ============ Visit planner (planner.js) ============ */
+.plan-fab { position: fixed; right: 20px; bottom: calc(20px + env(safe-area-inset-bottom)); z-index: 41; display: inline-flex; align-items: center; gap: 8px; min-height: 52px; padding: 0 20px 0 16px; border: 0; border-radius: 999px; background: var(--accent); color: #fff; font: 600 15px/1 var(--sans); box-shadow: 0 14px 36px -12px rgba(158, 60, 16, .7), inset 0 1px 0 rgba(255, 255, 255, .18); cursor: pointer; -webkit-tap-highlight-color: transparent; transition: scale 160ms ease-out, background-color 160ms ease-out; }
+.plan-fab svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.plan-fab:active { scale: .96; }
+@media (hover: hover) and (pointer: fine) { .plan-fab:hover { background: var(--accent-ink); } }
+.plan-fab:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+@media (max-width: 860px) { .plan-fab { right: 14px; bottom: calc(96px + env(safe-area-inset-bottom)); min-height: 48px; padding: 0 16px 0 14px; font-size: 14px; } }
+
+.plan-modal { width: min(760px, calc(100vw - 32px)); }
+.plan-body { position: relative; padding: clamp(24px, 4vw, 40px); overflow: auto; max-height: calc(100svh - 48px); }
+.plan-body h2 { margin: 4px 0 6px; font: 600 clamp(26px, 3.2vw, 34px)/1.1 var(--serif); color: var(--ink); }
+.plan-sub { margin: 0 0 18px; color: var(--ink-2); font-size: 15px; max-width: 52ch; }
+.plan-form textarea { width: 100%; box-sizing: border-box; min-height: 76px; padding: 14px 16px; border: 1px solid var(--line); border-radius: 14px; background: var(--bg); color: var(--ink); font: 400 16px/1.45 var(--sans); resize: vertical; }
+.plan-form textarea:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px rgba(196, 80, 27, .15); }
+.plan-actions { display: flex; gap: 10px; justify-content: space-between; margin-top: 10px; }
+.plan-mic { display: inline-flex; align-items: center; gap: 8px; min-height: 48px; padding: 0 18px; border: 1px solid var(--line); border-radius: 10px; background: var(--surface); color: var(--ink); font: 500 15px/1 var(--sans); cursor: pointer; }
+.plan-mic svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.plan-mic[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: #fff; }
+.plan-mic:disabled { opacity: .5; cursor: not-allowed; }
+@media (prefers-reduced-motion: no-preference) { .plan-mic[aria-pressed="true"] { animation: planPulse 1.4s ease-in-out infinite; } }
+@keyframes planPulse { 0%, 100% { box-shadow: 0 0 0 0 rgba(196, 80, 27, .45); } 50% { box-shadow: 0 0 0 8px rgba(196, 80, 27, 0); } }
+.plan-hint { min-height: 20px; margin: 8px 0 0; font-size: 14px; color: var(--accent-ink); }
+#planOut { margin-top: 8px; transition: opacity 200ms ease; }
+#planOut.is-refining { opacity: .72; }
+.plan-chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 6px 0 14px; }
+.plan-chip { padding: 6px 12px; border-radius: 999px; background: var(--surface-2); font-size: 14px; color: var(--ink); }
+.plan-chip b { font-weight: 600; color: var(--ink-2); margin-right: 4px; }
+.plan-summary { margin: 0 0 16px; font: 400 18px/1.45 var(--serif); color: var(--ink); }
+.plan-h { margin: 18px 0 10px; font-size: 13px; font-weight: 600; letter-spacing: .02em; color: var(--ink-2); }
+.plan-card { display: flex; gap: 16px; align-items: center; justify-content: space-between; padding: 14px 16px; margin-bottom: 10px; border: 1px solid var(--line); border-radius: 14px; background: var(--surface); }
+.plan-card.is-pick { border-color: rgba(196, 80, 27, .45); box-shadow: 0 10px 28px -18px rgba(158, 60, 16, .5); }
+.plan-card-cat { margin: 0; font-size: 13px; color: var(--ink-3); }
+.plan-card h3 { margin: 2px 0 4px; font: 600 18px/1.25 var(--serif); color: var(--ink); }
+.plan-card-meta { margin: 0; font-size: 14px; color: var(--ink-2); }
+.plan-card-side { display: flex; flex-direction: column; align-items: flex-end; gap: 8px; flex: none; }
+.plan-cost { margin: 0; text-align: right; }
+.plan-cost strong { display: block; font: 600 18px var(--serif); color: var(--ink); font-variant-numeric: tabular-nums; }
+.plan-cost span { font-size: 12px; color: var(--ink-3); }
+.plan-budget { margin: 6px 0 4px; }
+.plan-budget-bar { height: 8px; border-radius: 999px; background: var(--surface-2); overflow: hidden; }
+.plan-budget-bar span { display: block; height: 100%; border-radius: inherit; background: var(--accent); }
+.plan-budget p { margin: 8px 0 0; font-size: 14px; color: var(--ink-2); font-variant-numeric: tabular-nums; }
+.plan-learn { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 200px), 1fr)); gap: 8px; }
+.plan-learn-item { display: flex; flex-direction: column; gap: 2px; padding: 12px 14px; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); text-align: left; color: var(--ink); cursor: pointer; font: inherit; }
+.plan-learn-item strong { font-size: 15px; }
+.plan-learn-item span { font-size: 13px; color: var(--ink-3); }
+@media (hover: hover) and (pointer: fine) { .plan-learn-item:hover { border-color: var(--ink-3); } }
+.plan-note { margin: 14px 0 0; font-size: 13px; color: var(--ink-3); }
+.plan-foot { margin: 18px 0 0; padding-top: 14px; border-top: 1px solid var(--line); font-size: 12px; color: var(--ink-3); }
+.plan-cta { margin-top: 14px; }
+@media (max-width: 560px) {
+  .plan-card { flex-direction: column; align-items: stretch; }
+  .plan-card-side { flex-direction: row; align-items: center; justify-content: space-between; }
+  .plan-cost { text-align: left; }
+}
+.plan-voice { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.plan-lang { display: inline-flex; padding: 3px; border: 1px solid var(--line); border-radius: 10px; background: var(--surface-2); }
+.plan-lang button { min-height: 40px; padding: 0 12px; border: 0; border-radius: 8px; background: transparent; color: var(--ink-2); font: 500 14px/1 var(--sans); cursor: pointer; }
+.plan-lang button[aria-pressed="true"] { background: var(--surface); color: var(--ink); box-shadow: 0 1px 3px rgba(60, 36, 20, .15); }
+.plan-lang button:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+@media (max-width: 560px) { .plan-actions { flex-direction: column; align-items: stretch; } .plan-actions .btn { width: 100%; } }
