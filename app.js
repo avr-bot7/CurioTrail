@@ -535,7 +535,7 @@
           <p class="mk-host">with ${esc(w.host)}</p>
           <p class="mk-meta"><span>${esc(w.length)}</span><span>${esc(w.size)}</span><span>${esc(w.language)}</span></p>
           <div class="mk-foot">
-            <p class="mk-price"><strong>${rupees(w.price)}</strong><span>per person</span></p>
+            <p class="mk-price"><strong>${rupees(w.price)}</strong></p>
             <button class="btn btn-primary" type="button" data-book="${w.id}">Book a slot</button>
           </div>
         </div>

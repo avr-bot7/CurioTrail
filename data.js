@@ -405,42 +405,36 @@ window.CT_DATA.mgmd = {
 // Which tradition draws on which village profile.
 window.CT_DATA.mgmdFor = { "basohli-painting": "basohli", "basohli-pashmina": "basohli", "dogra-dham": "ramnagar", "kani": "kanihama", "saffron": "drangbal" };
 
-// DEMO workshops. Hosts and phone numbers are placeholders for the hackathon demo, not real people.
-// +91 00000 xxxxx is not a valid Indian number, so nobody gets called by mistake.
-// price: rupees per person. days: weekdays the session runs (0 = Sunday). slots: start times.
+// Workshops and marketplace sessions. Except for Basohli, the phone numbers are random sample numbers;
+// replace them with each host's real number before the site goes public.
+// price: rupees. days: weekdays the session runs (0 = Sunday). slots: start times.
 // The booking flow in app.js has no payment gateway; "Pay" only shows a confirmation.
 window.CT_DATA.workshops = [
-  { id: "w-basohli", record: "basohli-painting", title: "Basohli painting: from wasli to first miniature", host: "Basohli painters' studio",
-    phone: "+91 00000 10101", place: "Basohli, Kathua", when: "Weekends, October to March", length: "2 days", size: "Up to 8", language: "Dogri, Hindi",
-    price: 3500, max: 8, days: [0, 6], slots: ["10:00", "14:00"] },
+  { id: "w-basohli", record: "basohli-painting", title: "Basohli Painting", host: "Basohli painters' studio",
+    phone: "+91 70061 98055", place: "Basohli, Kathua", when: "Weekends, October to March", length: "2 days", size: "Up to 8", language: "Dogri, Hindi",
+    price: 5600, max: 8, days: [0, 6], slots: ["10:00", "14:00"] },
   { id: "w-phulkari", record: "phulkari", title: "Phulkari: darn your first bagh motif", host: "Patiala phulkari circle",
-    phone: "+91 00000 10108", place: "Patiala", when: "Wednesdays and Saturdays", length: "3 hours", size: "Up to 10", language: "Punjabi, Hindi",
-    price: 1400, max: 10, days: [3, 6], slots: ["11:00", "15:00"] },
-  { id: "w-carpet", record: "kashmir-carpet", title: "Tie your first knots on a carpet loom", host: "Srinagar kaleen baaf family",
-    phone: "+91 00000 10109", place: "Srinagar", when: "Monday to Friday", length: "Half day", size: "Up to 4", language: "Kashmiri, Urdu",
-    price: 1800, max: 4, days: [1, 2, 3, 4, 5], slots: ["09:30", "14:00"] },
-  { id: "w-sozni", record: "sozni", title: "Sozni stitches for beginners", host: "Women's sozni collective",
-    phone: "+91 00000 10103", place: "Srinagar", when: "Weekday mornings", length: "4 sessions", size: "Up to 10", language: "Kashmiri, Hindi",
-    price: 2400, max: 10, days: [1, 2, 3, 4, 5], slots: ["10:00"] },
-  { id: "w-kani", record: "kani", title: "Reading the talim at a Kani loom", host: "Kanihama weavers",
-    phone: "+91 00000 10104", place: "Kanihama, Budgam", when: "Tuesdays, Thursdays and Saturdays", length: "Half day", size: "Up to 4", language: "Kashmiri",
-    price: 1800, max: 4, days: [2, 4, 6], slots: ["10:00", "14:30"] },
+    phone: "+91 65881 39986", place: "Patiala", when: "Wednesdays and Saturdays", length: "3 hours", size: "Up to 10", language: "Punjabi, Hindi",
+    price: 4000, max: 10, days: [3, 6], slots: ["11:00", "15:00"] },
+  { id: "w-carpet", record: "kashmir-carpet", title: "Reshmee Kaleen", host: "Srinagar kaleen baaf family",
+    phone: "+91 99730 91141", place: "Srinagar", when: "Monday to Friday", length: "Half day", size: "Up to 4", language: "Kashmiri, Urdu",
+    price: 10000, max: 4, days: [1, 2, 3, 4, 5], slots: ["09:30", "14:00"] },
+  { id: "w-sozni", record: "sozni", title: "Sozni Shawl", host: "Women's sozni collective",
+    phone: "+91 90753 64556", place: "Srinagar", when: "Weekday mornings", length: "4 sessions", size: "Up to 10", language: "Kashmiri, Hindi",
+    price: 35000, max: 10, days: [1, 2, 3, 4, 5], slots: ["10:00"] },
+  { id: "w-kani", record: "kani", title: "Kani Shawl", host: "Kanihama weavers",
+    phone: "+91 65188 44729", place: "Kanihama, Budgam", when: "Tuesdays, Thursdays and Saturdays", length: "Half day", size: "Up to 4", language: "Kashmiri",
+    price: 5000, max: 4, days: [2, 4, 6], slots: ["10:00", "14:30"] },
   { id: "w-naqashi", record: "papier-mache", title: "Naqashi: painting florals on papier-mâché", host: "Old-city naqash workshop",
-    phone: "+91 00000 10102", place: "Srinagar", when: "Tuesdays and Saturdays", length: "3 hours", size: "Up to 6", language: "Kashmiri, Urdu, Hindi",
+    phone: "+91 80557 61698", place: "Srinagar", when: "Tuesdays and Saturdays", length: "3 hours", size: "Up to 6", language: "Kashmiri, Urdu, Hindi",
     price: 1200, max: 6, days: [2, 6], slots: ["11:00", "15:00"] },
-  { id: "w-walnut", record: "walnut-carving", title: "Walnut carving: first cuts", host: "Downtown woodcarvers",
-    phone: "+91 00000 10106", place: "Srinagar", when: "Saturdays", length: "2 sessions", size: "Up to 5", language: "Kashmiri, Hindi",
+  { id: "w-walnut", record: "walnut-carving", title: "Walnut Wood Carving Coaster", host: "Downtown woodcarvers",
+    phone: "+91 91689 76846", place: "Srinagar", when: "Saturdays", length: "2 sessions", size: "Up to 5", language: "Kashmiri, Hindi",
     price: 2000, max: 5, days: [6], slots: ["10:00"] },
   { id: "w-jutti", record: "punjabi-jutti", title: "Stitch and embroider a pair of juttis", host: "Patiala jutti makers",
-    phone: "+91 00000 10110", place: "Patiala", when: "Fridays and Saturdays", length: "2 sessions", size: "Up to 6", language: "Punjabi, Hindi",
+    phone: "+91 98809 32081", place: "Patiala", when: "Fridays and Saturdays", length: "2 sessions", size: "Up to 6", language: "Punjabi, Hindi",
     price: 2200, max: 6, days: [5, 6], slots: ["10:30"] },
-  { id: "w-thathera", record: "thathera", title: "Beat a brass bowl with a thathera", host: "Jandiala Guru thathera family",
-    phone: "+91 00000 10107", place: "Jandiala Guru, Amritsar", when: "Weekdays", length: "Half day", size: "Up to 6", language: "Punjabi, Hindi",
-    price: 1500, max: 6, days: [1, 2, 3, 4, 5], slots: ["09:00", "13:00"] },
-  { id: "w-kandur", record: "kashmiri-bread", title: "Dawn at the kandur: bake girda and lavasa", host: "Neighbourhood kandur, old Srinagar",
-    phone: "+91 00000 10111", place: "Srinagar", when: "Every morning except Friday", length: "2 hours", size: "Up to 4", language: "Kashmiri, Urdu",
-    price: 900, max: 4, days: [0, 1, 2, 3, 4, 6], slots: ["06:00", "07:00"] },
-  { id: "w-kalari", record: "dogra-dham", title: "Making kalari the Ramnagar way", host: "Ramnagar home kitchen",
-    phone: "+91 00000 10105", place: "Ramnagar, Udhampur", when: "Sundays", length: "3 hours", size: "Up to 6", language: "Dogri, Hindi",
-    price: 1100, max: 6, days: [0], slots: ["11:00"] }
+  { id: "w-thathera", record: "thathera", title: "Handcrafted Brass", host: "Jandiala Guru thathera family",
+    phone: "+91 97273 17784", place: "Jandiala Guru, Amritsar", when: "Weekdays", length: "Half day", size: "Up to 6", language: "Punjabi, Hindi",
+    price: 1500, max: 6, days: [1, 2, 3, 4, 5], slots: ["09:00", "13:00"] }
 ];
